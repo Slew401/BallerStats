@@ -1,8 +1,7 @@
 import React from 'react'
-import { Navbar } from 'react-bootstrap';
+import Navigation from './components/Navigation';
 
 import "./App.css";
-import Navigation from './components/Navigation';
 
 const App = () => {
     return (
