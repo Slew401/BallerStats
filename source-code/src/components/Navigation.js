@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import {Switch, Link, Route} from "react-router-dom"
 import {Home, PlayerFinder, TeamFinder, Glossary} from "./index.js"
 
