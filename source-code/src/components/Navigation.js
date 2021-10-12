@@ -24,20 +24,7 @@ const Navigation = () => {
                     </Nav>
                 </Navbar.Collapse>            
             </Navbar>
-            <Switch>
-                <Route path = "/Home">
-                    <Home/>
-                </Route>
-                <Route path = "/PlayerFinder">
-                    <PlayerFinder/>
-                </Route>
-                <Route path = "/TeamFinder">
-                    <TeamFinder/>
-                </Route>
-                <Route path = "/Glossary">
-                    <Glossary/>
-                </Route>
-            </Switch>
+            
         </div>
     )
 }
