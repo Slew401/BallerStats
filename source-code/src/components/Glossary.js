@@ -1,18 +1,30 @@
 import React from 'react';
-import {Container} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 
 const Glossary = () => {
     return (
         <div>
-             <Container>
+             <Container className = "content">
                 <div>
-                    Basketball Statistics Glossary
+                    <h1 className = "title-head">Basketball Statistics Glossary</h1>
                 </div>
                 <div>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Suis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <Row>
+                        <Col><b>%3PA-</b>  The percentage of a team's 3 point field goals attempted that a player has while on the court </Col>
+                        <Col><b>%3PM-</b> The percentage of a team's 3 point field goals that a player has made while on the court</Col>
+                    </Row>
+                    <Row>
+                        <Col><b>%3PA-</b>  The percentage of a team's 3 point field goals attempted that a player has while on the court </Col>
+                        <Col><b>%3PM-</b> The percentage of a team's 3 point field goals that a player has made while on the court</Col>
+                    </Row>
+                    <Row>
+                        <Col><b>%3PA-</b>  The percentage of a team's 3 point field goals attempted that a player has while on the court </Col>
+                        <Col><b>%3PM-</b> The percentage of a team's 3 point field goals that a player has made while on the court</Col>
+                    </Row>
+                    <Row>
+                        <Col><b>%3PA-</b>  The percentage of a team's 3 point field goals attempted that a player has while on the court </Col>
+                        <Col><b>%3PM-</b> The percentage of a team's 3 point field goals that a player has made while on the court</Col>
+                    </Row>
                 </div>
             </Container>
         </div>

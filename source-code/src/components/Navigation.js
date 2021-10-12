@@ -11,7 +11,7 @@ const Navigation = () => {
         <div>
             <Navbar bg="bball" expand="lg">
                 <img className = "ball-image" src = {ball} alt = "logo"></img>
-                <span><Navbar.Brand href="#home"><b>BUCKETSTATS</b></Navbar.Brand></span>
+                <><Navbar.Brand><b>BUCKETSTATS</b></Navbar.Brand></>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>

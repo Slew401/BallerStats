@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navigation, TeamFinder, PlayerFinder, Glossary, Home } from './components'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect} from 'react-router-dom'
 
 
 import "./App.css";
@@ -13,9 +13,10 @@ const App = () => {
            </div>
             <div className = "main-body">
             <Switch>
-                <Route path = "/Home">
+                {/* Redirect doesnt work to get to home needs fixing*/}
+                <Redirect exact from="/" to = "/Home">
                     <Home/>
-                </Route>
+                </Redirect>
                 <Route path = "/PlayerFinder">
                     <PlayerFinder/>
                 </Route>

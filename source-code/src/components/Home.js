@@ -4,7 +4,9 @@ import { Container } from 'react-bootstrap'
 const Home = () => {
     return (
         <div>
-           Goop leap
+        <Container className = "content">
+            Hoop Dreams
+        </Container>
         </div>
     )
 }
