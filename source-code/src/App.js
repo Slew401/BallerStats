@@ -1,7 +1,6 @@
 import React from 'react'
-import Navigation from './components/Navigation';
-import { Switch, Route } from 'react-router';
-import { PlayerFinder, Home, TeamFinder, Glossary } from './components';
+import { Navigation, TeamFinder, PlayerFinder, Glossary, Home } from './components'
+import { Switch, Route } from 'react-router-dom'
 
 
 import "./App.css";
@@ -11,8 +10,10 @@ const App = () => {
         <div className = "app">
            <div className = "header">
                 <Navigation/>
+           </div>
+            <div className = "main-body">
             <Switch>
-                <Route path = "/">
+                <Route path = "/Home">
                     <Home/>
                 </Route>
                 <Route path = "/PlayerFinder">
@@ -25,9 +26,6 @@ const App = () => {
                     <Glossary/>
                 </Route>
             </Switch>
-           </div>
-            <div className = "main">
-            
             </div>
             <div className = "footer">
 

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from "react-router-dom"
+import { Switch, Route } from 'react-router'
+import {TeamFinder, PlayerFinder, Glossary, Home } from '.'
 
 import ball from './basketball-ball-solid.svg'
 
@@ -20,6 +22,7 @@ const Navigation = () => {
                     </Nav>
                 </Navbar.Collapse>            
             </Navbar>
+            
         </div>
     )
 }
