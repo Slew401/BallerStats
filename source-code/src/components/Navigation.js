@@ -1,12 +1,8 @@
 import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
-import {Switch, Link, Route} from "react-router-dom"
-import {Home, PlayerFinder, TeamFinder, Glossary} from "./index.js"
+import { Link } from "react-router-dom"
 
 import ball from './basketball-ball-solid.svg'
-
-
-
 
 const Navigation = () => {
     return (
@@ -19,12 +15,11 @@ const Navigation = () => {
                     <Nav>
                         <Nav.Link as={Link} to = {"/Home"}>Home</Nav.Link>
                         <Nav.Link as={Link} to = {"/PlayerFinder"}>Player Finder</Nav.Link>
-                        <Nav.Link as={Link} to = {"/TeamFinder"}>TeamFinder</Nav.Link>
+                        <Nav.Link as={Link} to = {"/TeamFinder"}>Team Finder</Nav.Link>
                         <Nav.Link as={Link} to = {"/Glossary"}>Glossary</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>            
             </Navbar>
-            
         </div>
     )
 }

@@ -20,3 +20,20 @@
 .nav-headings {
     margin-right: 15px;
 }
+
+.footer {
+    background-color: rgb(250, 131, 32);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}

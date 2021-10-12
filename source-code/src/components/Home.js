@@ -1,9 +1,10 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
 const Home = () => {
     return (
         <div>
-            HOME is Here and also the default on launch
+           Goop leap
         </div>
     )
 }

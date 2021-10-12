@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import { Switch, Route } from 'react-router';
 import { PlayerFinder, Home, TeamFinder, Glossary } from './components';
 
+
 import "./App.css";
 
 const App = () => {
@@ -10,8 +11,6 @@ const App = () => {
         <div className = "app">
            <div className = "header">
                 <Navigation/>
-           </div>
-            <div className = "main-body">
             <Switch>
                 <Route path = "/">
                     <Home/>
@@ -26,6 +25,9 @@ const App = () => {
                     <Glossary/>
                 </Route>
             </Switch>
+           </div>
+            <div className = "main">
+            
             </div>
             <div className = "footer">
 
