@@ -14,9 +14,9 @@ const App = () => {
             <div className = "main-body">
             <Switch>
                 {/* Redirect doesnt work to get to home needs fixing*/}
-                <Redirect exact from="/" to = "/Home">
+                <Route path = "/Home">
                     <Home/>
-                </Redirect>
+                </Route>
                 <Route path = "/PlayerFinder">
                     <PlayerFinder/>
                 </Route>
@@ -25,6 +25,9 @@ const App = () => {
                 </Route>
                 <Route path = "/Glossary">
                     <Glossary/>
+                </Route>
+                <Route path = "/">
+                    <Home/>
                 </Route>
             </Switch>
             </div>
