@@ -46,3 +46,7 @@
 .title-head {
     text-align: center;
 }
+
+.col-size {
+    max-height: 200px;
+}

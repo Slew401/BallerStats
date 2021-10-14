@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navigation, TeamFinder, PlayerFinder, Glossary, Home } from './components'
 import { Switch, Route, Redirect} from 'react-router-dom'
+import { Container } from 'react-bootstrap';
 
 
 import "./App.css";
@@ -13,7 +14,6 @@ const App = () => {
            </div>
             <div className = "main-body">
             <Switch>
-                {/* Redirect doesnt work to get to home needs fixing*/}
                 <Route path = "/Home">
                     <Home/>
                 </Route>
@@ -26,13 +26,14 @@ const App = () => {
                 <Route path = "/Glossary">
                     <Glossary/>
                 </Route>
+                {/* Default Route */}
                 <Route path = "/">
                     <Home/>
                 </Route>
             </Switch>
             </div>
             <div className = "footer">
-
+        
             </div>
         </div>
     )

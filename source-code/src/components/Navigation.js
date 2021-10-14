@@ -5,12 +5,13 @@ import { Switch, Route } from 'react-router'
 import {TeamFinder, PlayerFinder, Glossary, Home } from '.'
 
 import ball from './basketball-ball-solid.svg'
+import logo from './Logo.svg'
 
 const Navigation = () => {
     return (
         <div>
             <Navbar bg="bball" expand="lg">
-                <img className = "ball-image" src = {ball} alt = "logo"></img>
+                <img className = "ball-image" src = {logo} alt = "logo"></img>
                 <><Navbar.Brand><b>BUCKETSTATS</b></Navbar.Brand></>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
