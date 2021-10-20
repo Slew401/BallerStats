@@ -14,8 +14,8 @@ const Glossary = () => {
                         <Col><b>%3PM-</b> The percentage of a team's 3 point field goals that a player has made while on the court</Col>
                     </Row>
                     <Row>
-                        <Col><b>%3PA-</b>  The percentage of a team's 3 point field goals attempted that a player has while on the court </Col>
-                        <Col><b>%3PM-</b> The percentage of a team's 3 point field goals that a player has made while on the court</Col>
+                        <Col><b>%AST-</b>The percentage of a team's assists that a player has while on the court</Col>
+                        <Col><b>%BLK-</b>The percentage of a team's blocks that a player has while on the court</Col>
                     </Row>
                     <Row>
                         <Col><b>%3PA-</b>  The percentage of a team's 3 point field goals attempted that a player has while on the court </Col>
