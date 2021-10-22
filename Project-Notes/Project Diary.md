@@ -34,6 +34,8 @@ Write UP Introduction and Aims and Objectives, Stack Comparison
 # References
 
 ## Books
+https://www.google.co.uk/books/edition/Monetizing_Your_Data/xC08DgAAQBAJ?hl=en&gbpv=1&dq=how+companies+use+your+data&printsec=frontcover
+
 Analytic Methods in Sports: Using Mathematics and Statistics to Understand Data from Baseball, Football, Basketball, and Other Sports
 
 Thinking Basketball
@@ -62,3 +64,5 @@ https://fansided.com/2019/01/08/nylon-calculus-best-advanced-stat/
 How is big data analytics changing sports?
 
 https://seleritysas.com/blog/2021/03/27/how-is-big-data-analytics-changing-sports/
+
+https://knowledge.wharton.upenn.edu/article/data-shared-sold-whats-done/
