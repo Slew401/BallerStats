@@ -23,6 +23,7 @@ export const playersApi = createApi({
 });
 
 export const {
-    useGetPlayers,
+    useGetPlayersQuery,
+    useGetTeamsQuery
 } = playersApi; 
 
