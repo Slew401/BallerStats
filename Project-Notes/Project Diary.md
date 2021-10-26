@@ -69,6 +69,8 @@ User Centered System Design: New Perspectives on Human-computer Interaction
 
 Basketball on Paper: Rules and Tools for Performance Analysis
 
+Developing Basketball Game Strategy through Statistical Analysis
+
 ## Websites
 
 Backpicks.com
