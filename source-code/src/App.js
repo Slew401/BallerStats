@@ -32,9 +32,7 @@ const App = () => {
                 </Route>
             </Switch>
             </div>
-            <div className = "footer">
-        
-            </div>
+
         </div>
     )
 }
