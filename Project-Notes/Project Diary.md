@@ -85,7 +85,10 @@ https://digital.hbs.edu/platform-digit/submission/how-data-analytics-is-revoluti
 
 https://towardsdatascience.com/nba-data-analytics-changing-the-game-a9ad59d1f116
 
-https://dailycampus.com/2021/03/15/karthiks-take-the-evolution-of-nba-offense/
+https://dailycampus.com/2021/03/15/karthiks-take-the-evolution-of-nba-offense/ 
+
+https://www.alexa.com/topsites (Reddit references)
+https://subredditstats.com/r/nba (reddit reference)
 
 ## Prgramming Languages and Tools
 
