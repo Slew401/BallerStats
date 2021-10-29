@@ -44,6 +44,9 @@ Designing Interactive Systems: A Comprehensive Guide to HCI, UX and Interaction 
 
 User Centered System Design: New Perspectives on Human-computer Interaction
 
+Basketball Data Science: With Applications in R
+
+
 ## Papers
 Estimating an NBA Pla Estimating an NBA Player’s Impact on is T s Impact on is Team’s Chances of s Chances of
 Winning
@@ -89,6 +92,7 @@ https://dailycampus.com/2021/03/15/karthiks-take-the-evolution-of-nba-offense/
 
 https://www.alexa.com/topsites (Reddit references)
 https://subredditstats.com/r/nba (reddit reference)
+
 
 ## Prgramming Languages and Tools
 
