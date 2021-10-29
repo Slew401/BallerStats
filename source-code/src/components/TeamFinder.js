@@ -5,15 +5,11 @@ import { Link } from 'react-router-dom'
 import nba from "nba"; 
 import axios from "axios"
 import { useGetTeamRosterQuery } from '../services/sr.api';
+import { useGetTeamsQuery } from '../services/nbaPIS';
 const proxy = "https://cors-anywhere.herokuapp.com/corsdemo/"
 
 const TeamFinder = () => {
-    fetch(`https://data.nba.net/10s/prod/v1/2018/players/2544_uber_stats.json`).then(Response => {
-        console.log(Response.json());
-        
-    })
-
-    const {data, isFetching} = useGetTeamRosterQuery();
+    const {data, isFetching} = useGetTeamsQuery();
     console.log(data);
     return (
         <div>
