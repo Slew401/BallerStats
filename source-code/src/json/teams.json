@@ -1,0 +1,211 @@
+[ {
+    "id" : 19,
+    "name" : "Portland Trail Blazers",
+    "conference" : "Western",
+    "record" : "3-2",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.085"
+  }, {
+    "id" : 23,
+    "name" : "Los Angeles Lakers",
+    "conference" : "Western",
+    "record" : "3-3",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.101"
+  }, {
+    "id" : 24,
+    "name" : "Phoenix Suns",
+    "conference" : "Western",
+    "record" : "2-3",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.116"
+  }, {
+    "id" : 2,
+    "name" : "Brooklyn Nets",
+    "conference" : "Eastern",
+    "record" : "3-3",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.136"
+  }, {
+    "id" : 10,
+    "name" : "Milwaukee Bucks",
+    "conference" : "Eastern",
+    "record" : "3-3",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.152"
+  }, {
+    "id" : 13,
+    "name" : "Miami Heat",
+    "conference" : "Eastern",
+    "record" : "5-1",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.172"
+  }, {
+    "id" : 9,
+    "name" : "Indiana Pacers",
+    "conference" : "Eastern",
+    "record" : "1-6",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.190"
+  }, {
+    "id" : 29,
+    "name" : "New Orleans Pelicans",
+    "conference" : "Western",
+    "record" : "1-6",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/no.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.211"
+  }, {
+    "id" : 27,
+    "name" : "Houston Rockets",
+    "conference" : "Western",
+    "record" : "1-4",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.229"
+  }, {
+    "id" : 14,
+    "name" : "Orlando Magic",
+    "conference" : "Eastern",
+    "record" : "1-6",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.244"
+  }, {
+    "id" : 16,
+    "name" : "Denver Nuggets",
+    "conference" : "Western",
+    "record" : "4-2",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.264"
+  }, {
+    "id" : 3,
+    "name" : "New York Knicks",
+    "conference" : "Eastern",
+    "record" : "5-1",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.278"
+  }, {
+    "id" : 17,
+    "name" : "Minnesota Timberwolves",
+    "conference" : "Western",
+    "record" : "3-2",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.292"
+  }, {
+    "id" : 15,
+    "name" : "Washington Wizards",
+    "conference" : "Eastern",
+    "record" : "5-1",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.307"
+  }, {
+    "id" : 11,
+    "name" : "Atlanta Hawks",
+    "conference" : "Eastern",
+    "record" : "3-3",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.326"
+  }, {
+    "id" : 30,
+    "name" : "San Antonio Spurs",
+    "conference" : "Western",
+    "record" : "2-4",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/sa.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.341"
+  }, {
+    "id" : 4,
+    "name" : "Philadelphia 76ers",
+    "conference" : "Eastern",
+    "record" : "4-2",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.354"
+  }, {
+    "id" : 21,
+    "name" : "Golden State Warriors",
+    "conference" : "Western",
+    "record" : "5-1",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.371"
+  }, {
+    "id" : 22,
+    "name" : "LA Clippers",
+    "conference" : "Western",
+    "record" : "1-4",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.388"
+  }, {
+    "id" : 28,
+    "name" : "Memphis Grizzlies",
+    "conference" : "Western",
+    "record" : "3-3",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.401"
+  }, {
+    "id" : 8,
+    "name" : "Detroit Pistons",
+    "conference" : "Eastern",
+    "record" : "1-4",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.414"
+  }, {
+    "id" : 12,
+    "name" : "Charlotte Hornets",
+    "conference" : "Eastern",
+    "record" : "4-2",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.437"
+  }, {
+    "id" : 1,
+    "name" : "Boston Celtics",
+    "conference" : "Eastern",
+    "record" : "2-4",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.456"
+  }, {
+    "id" : 25,
+    "name" : "Sacramento Kings",
+    "conference" : "Western",
+    "record" : "3-2",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.472"
+  }, {
+    "id" : 7,
+    "name" : "Cleveland Cavaliers",
+    "conference" : "Eastern",
+    "record" : "3-4",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.063"
+  }, {
+    "id" : 18,
+    "name" : "Oklahoma City Thunder",
+    "conference" : "Western",
+    "record" : "1-5",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.488"
+  }, {
+    "id" : 26,
+    "name" : "Dallas Mavericks",
+    "conference" : "Western",
+    "record" : "3-2",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.501"
+  }, {
+    "id" : 20,
+    "name" : "Utah Jazz",
+    "conference" : "Western",
+    "record" : "4-1",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.516"
+  }, {
+    "id" : 5,
+    "name" : "Toronto Raptors",
+    "conference" : "Eastern",
+    "record" : "4-3",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.530"
+  }, {
+    "id" : 6,
+    "name" : "Chicago Bulls",
+    "conference" : "Eastern",
+    "record" : "5-1",
+    "teamLogoUrl" : "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
+    "dateLastUpdated" : "2021-10-31T10:01:28.545"
+  } ]

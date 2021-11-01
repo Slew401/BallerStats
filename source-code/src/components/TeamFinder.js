@@ -1,23 +1,45 @@
 import React, { useState } from 'react'
 import { Container } from 'react-bootstrap'
-import {Row, Col, Card} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import nba from "nba"; 
-import axios from "axios"
+import teamsJSON from "../json/teams.json";
 import { useGetTeamsFromSourceQuery } from '../services/data.nba';
-
-const proxy = "https://cors-anywhere.herokuapp.com/corsdemo/"
+import { Card, Row, Col, Input } from 'antd'
+import { Link } from "react-router-dom"
 
 const TeamFinder = () => {
-    const {data, isFetching} = useGetTeamsFromSourceQuery();  
-    console.log(data.league.standard[0].teamId); 
+    const {data} = useGetTeamsFromSourceQuery()
+    console.log(data); 
+    // const api = fetch("https://nba-player-individual-stats.p.rapidapi.com/players", {
+    //     method: "GET",
+    //     withCredential:true, 
+    //     headers: {
+    //         'x-rapidapi-host': 'nba-player-individual-stats.p.rapidapi.com',
+    //         'x-rapidapi-key': '6e009c2a9amsh074604bd5f4bf85p1222d5jsne72d4a262676'
+            
+    //     }
+    //     }).then(res => {
+    //     console.log(res.json()); 
+    // });
+    
+    console.log(teamsJSON); 
     return (
-        <div>
             <Container className = "content">
                 <h1 className = "title-head">Team Finder</h1>
-               
+                <Row gutter = {[32,32]} className = "team-card-container">
+                    {teamsJSON?.map((team) => (
+                        <Col xs ={24} sm = {12} lg = {6} className = "crypto-card" key = {team.id}>
+                            <Link to = {`/teams/${team.id}`}>
+                                <Card 
+                                extra={<img style={{width:"100px", height:"100px"}} src = {team.teamLogoUrl}/>}
+                                hoverable
+                                title={`${team.name}`}>
+                                <p>{team.conference} Conference</p>
+                                <p>Record: {team.record}</p>
+                                </Card>
+                            </Link>
+                        </Col>
+                    ))}
+                </Row>
             </Container>
-        </div>
     )
 }
 

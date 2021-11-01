@@ -1,8 +1,8 @@
 import React from 'react'
-import { Navigation, TeamFinder, PlayerFinder, Glossary, Home } from './components'
+import { Navigation, TeamFinder, PlayerFinder, Glossary, Home, PlayerComparison, PlayerDetails, Teamdetails } from './components'
 import { Switch, Route, Redirect} from 'react-router-dom'
 import { Container } from 'react-bootstrap';
-
+import { Layout } from "antd"; 
 
 import "./App.css";
 
@@ -13,26 +13,33 @@ const App = () => {
                 <Navigation/>
            </div>
             <div className = "main-body">
-            <Switch>
-                <Route path = "/Home">
-                    <Home/>
-                </Route>
-                <Route path = "/PlayerFinder">
-                    <PlayerFinder/>
-                </Route>
-                <Route path = "/TeamFinder">
-                    <TeamFinder/>
-                </Route>
-                <Route path = "/Glossary">
-                    <Glossary/>
-                </Route>
-                {/* Default Route */}
-                <Route path = "/">
-                    <Home/>
-                </Route>
-            </Switch>
+            <Layout >
+                <Switch>
+                    <Route path = "/Home">
+                        <Home/>
+                    </Route>
+                    <Route path = "/PlayerFinder">
+                        <PlayerFinder/>
+                    </Route>
+                    <Route path = "/TeamFinder">
+                        <TeamFinder/>
+                    </Route>
+                    <Route path = "/Glossary">
+                        <Glossary/>
+                    </Route>
+                    <Route path = "/PlayerComparison">
+                        <PlayerComparison/>
+                    </Route>
+                    <Route path = "/teams/:teamid">
+                        <Teamdetails/>
+                    </Route>
+                    {/* Default Route */}
+                    <Route path = "/">
+                        <Home/>
+                    </Route>
+                </Switch>
+            </Layout>
             </div>
-
         </div>
     )
 }
