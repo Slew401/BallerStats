@@ -8,25 +8,25 @@ import { Link } from "react-router-dom"
 const TeamFinder = () => {
     const {data} = useGetTeamsFromSourceQuery()
     console.log(data); 
-    // const api = fetch("https://nba-player-individual-stats.p.rapidapi.com/players", {
-    //     method: "GET",
-    //     withCredential:true, 
-    //     headers: {
-    //         'x-rapidapi-host': 'nba-player-individual-stats.p.rapidapi.com',
-    //         'x-rapidapi-key': '6e009c2a9amsh074604bd5f4bf85p1222d5jsne72d4a262676'
+    const playerapi = fetch("https://nba-player-individual-stats.p.rapidapi.com/players", {
+        method: "GET",
+        withCredential:true, 
+        headers: {
+            'x-rapidapi-host': 'nba-player-individual-stats.p.rapidapi.com',
+            'x-rapidapi-key': '6e009c2a9amsh074604bd5f4bf85p1222d5jsne72d4a262676'
             
-    //     }
-    //     }).then(res => {
-    //     console.log(res.json()); 
-    // });
+        }
+        }).then(res => {
+        console.log(res.json()); 
+    });
     
-    console.log(teamsJSON); 
+    console.log(playerapi); 
     return (
             <Container className = "content">
                 <h1 className = "title-head">Team Finder</h1>
                 <Row gutter = {[32,32]} className = "team-card-container">
                     {teamsJSON?.map((team) => (
-                        <Col xs ={24} sm = {12} lg = {6} className = "crypto-card" key = {team.id}>
+                        <Col xs ={24} sm = {12} lg = {6} className = "team-card" key = {team.id}>
                             <Link to = {`/teams/${team.id}`}>
                                 <Card 
                                 extra={<img style={{width:"100px", height:"100px"}} src = {team.teamLogoUrl}/>}

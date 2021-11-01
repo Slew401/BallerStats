@@ -33,6 +33,9 @@ const App = () => {
                     <Route path = "/teams/:teamid">
                         <Teamdetails/>
                     </Route>
+                    <Route path = "/players/:playerid">
+                        <PlayerDetails/>
+                    </Route>
                     {/* Default Route */}
                     <Route path = "/">
                         <Home/>
