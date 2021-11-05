@@ -27,7 +27,7 @@ app.get("/newEP", (req,res) => {
     res.send("hello, BallerStats")
 })
 
-app.get('/SRteams', async (request, response) => {
+app.get('/sportradar/SRteams', async (request, response) => {
     const api_url = "http://api.sportradar.us/nba/trial/v7/en/games/6d2c3191-8604-4026-84d3-32f36d042a8e/pbp.json?api_key=dtvarwvtj66mk932j3m3cta4";
     const fetchRes = await fetch(api_url);
     const json = await fetchRes.json();

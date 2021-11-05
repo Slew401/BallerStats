@@ -1,13 +1,10 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
-const headers = {
-    'x-rapidapi-host': 'api.sportradar.us/nba/trial/v7/en',
-    'x-rapidapi-key': 'dtvarwvtj66mk932j3m3cta4'
-}
+
 
 const baseUrl = "http://api.sportradar.us/nba/trial/v7/en"
 
-const createRequest = url => ({ url, headers: headers});
+const createRequest = url => ({ url });
 
 export const srAPI = createApi({
     reducerPath: 'createApi', 

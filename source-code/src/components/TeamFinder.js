@@ -24,15 +24,14 @@ const TeamFinder = () => {
             <Container className = "content">
                 <h1 className = "title-head">Team Finder</h1>
                 <Row gutter = {[32,32]} className = "team-card-container">
-                    {teams?.map((team) => (
+                    {teamsJSON?.map((team) => (
                         <Col xs ={24} sm = {12} lg = {6} className = "team-card" key = {team.id}>
-                            <Link to = {`/teams/${team.id}`}>
+                            <Link to = {`/teams/${team.dataNBAId}`}>
                                 <Card 
                                 extra={<img style={{width:"100px", height:"100px"}} src = {team.teamLogoUrl}/>}
                                 hoverable
                                 title={`${team.name}`}>
                                 <p>{team.conference} Conference</p>
-                                <p>Record: {team.record}</p>
                                 </Card>
                             </Link>
                         </Col>

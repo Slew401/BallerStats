@@ -25,7 +25,7 @@
     "seasonScheduleYear":2021,
     "showPlayoffsClinch":true,
     "links":{
-       "anchorDate":"20211028",
+       "anchorDate":"20211028", 
        "currentDate":"20211028",
        "calendar":"/prod/v1/calendar.json",
        "todayScoreboard":"/prod/v1/20211028/scoreboard.json",
