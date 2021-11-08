@@ -2,7 +2,7 @@
   "name": "source-code",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3030",
+  "proxy" : "http://localhost:5000" ,
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@fortawesome/fontawesome-free": "^5.15.4",
@@ -24,7 +24,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "PORT=9000 react-scripts start",
+    "start": "PORT=7000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
