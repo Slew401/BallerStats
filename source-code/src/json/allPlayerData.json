@@ -5176,7 +5176,7 @@
              "firstName":"Stephen",
              "lastName":"Curry",
              "temporaryDisplayName":"Curry, Stephen",
-             "personId":"201939",
+               "personId":"201939",
              "teamId":"1610612744",
              "jersey":"30",
              "isActive":true,

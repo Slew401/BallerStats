@@ -1,5 +1,6 @@
 [{
     "id" : 152,
+    "personId":"201939",
     "firstName" : "Stephen",
     "lastName" : "Curry",
     "team" : "Golden State Warriors",
@@ -21,6 +22,7 @@
     "dateLastUpdated" : "2021-10-31T10:00:27.039"
   } , {
     "id" : 226,
+    "personId":"2544",
     "firstName" : "LeBron",
     "lastName" : "James",
     "team" : "Los Angeles Lakers",
@@ -44,6 +46,7 @@
     "id" : 208,
     "firstName" : "Kawhi",
     "lastName" : "Leonard",
+    "personId":"202695",
     "team" : "LA Clippers",
     "position" : "Small Forward",
     "dateOfBirth" : "6/29/1991",
@@ -63,6 +66,7 @@
     "dateLastUpdated" : "2021-10-31T10:00:38.417"
   },  {
     "id" : 40,
+    "personId":"201142",
     "firstName" : "Kevin",
     "lastName" : "Durant",
     "team" : "Brooklyn Nets",
@@ -85,6 +89,7 @@
   },{
     "id" : 264,
     "firstName" : "Giannis",
+    "personId":"203507",
     "lastName" : "Antetokounmpo",
     "team" : "Milwaukee Bucks",
     "position" : "Power Forward",

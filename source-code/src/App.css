@@ -61,3 +61,85 @@
 .team-card .crypto-image{
     width:35px;
 }
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width:1300px){
+    .main{
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width:1170px){
+    .main{
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .main{
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .app{
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .navbar{
+        flex: 1;
+    }
+
+    .main{
+        flex: 1;
+        margin-top: 90px;
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+
+    .nav-container{
+        height: 8vh;
+        position:fixed;
+        width: 100%;
+        z-index: 100;
+        background-color: var(--bgSecondary);
+    }
+  
+    .menu-control-container{
+        display: block !important;
+    }
+
+    .ant-menu{
+        position: absolute;
+        right: 0px;
+    }
+    .home-title{
+        font-size: 1.4rem !important;
+    }
+    .show-more{
+        font-size: 1.3rem !important;
+    }
+}
+
+.player-detail-container{
+    margin: 30px;
+}
+
+.player-heading-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid var(--border);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 10px;
+}

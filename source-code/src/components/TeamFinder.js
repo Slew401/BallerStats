@@ -8,6 +8,7 @@ import { async } from "async";
 
 const TeamFinder = () => {
     const [teams, setTeams] = useState(null)
+    let teamName; 
     useEffect(() => {
         fetch("https://nba-player-individual-stats.p.rapidapi.com/teams", {
         method: "GET",
@@ -24,15 +25,21 @@ const TeamFinder = () => {
             <Container className = "content">
                 <h1 className = "title-head">Team Finder</h1>
                 <Row gutter = {[32,32]} className = "team-card-container">
-                    {teams.map((team) => (
+                    {teamsJSON?.map((team) => (
                         <Col xs ={24} sm = {12} lg = {6} className = "team-card" key = {team.id}>
-                            <Link to = {`/teams/${team.dataNBAId}`}>
+                            {/* {teamName = team?.name} */}
+                            {/* <Link to = {`/teams/${team.dataNBAId}`} state = {{title: team.name}}> */}
+                            <Link to = {{
+                                pathname: `/teams/${team.dataNBAId}`,
+                                state: {
+                                    title: teamName
+                                }
+                            }}>
                                 <Card 
-                                extra={<img style={{width:"100px", height:"100px"}} src = {team.teamLogoUrl}/>}
+                                extra={<img style={{width:"100px", height:"100px"}} src = {team.teamLogoUrl} alt= "alt"/>}
                                 hoverable
                                 title={`${team.name}`}>
                                 <p>{team.conference} Conference</p>
-                                <p>Record: {team.record}</p>
                                 </Card>
                             </Link>
                         </Col>
