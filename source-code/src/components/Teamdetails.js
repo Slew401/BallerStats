@@ -10,15 +10,14 @@ const Teamdetails = () => {
     const { title } = location.state
     const params = useParams()
     const teamId = params?.teamid
-    const { data, isfetch} = useGetSpecificTeamQuery(teamId);
     const [teamDetails, setTeamDetails] = useState(null)
     
-    useEffect(() => {
-        fetch(`${url}/prod/v1/2021/teams/${teamId}/leaders.json`)
-        .then(res => res.json())
-        .then(res => setTeamDetails(res.league.standard));
-    },[teamId])
-    console.log(data); 
+    // useEffect(() => {
+    //     fetch(`${url}/prod/v1/2021/teams/${teamId}/leaders.json`)
+    //     .then(res => res.json())
+    //     .then(res => setTeamDetails(res.league.standard));
+    // },[teamId])
+    // console.log(data); 
 
     return (
         <Container className = "content">

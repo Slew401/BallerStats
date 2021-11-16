@@ -58,6 +58,8 @@ on Scientific Visualization CD-ROM
 
 State of the Art of Sports Data Visualization
 
+https://global-uploads.webflow.com/5f1af76ed86d6771ad48324b/5f6d33f10652ac549a1b8ea3_KaplanEtAl_13389_FullPaperSubmission_RevisedEquations.pdf
+
 POINTWISE:
 Predicting Points and Valuing Decisions in Real Time
 with NBA Optical Tracking Data
@@ -127,3 +129,6 @@ Free-NBA
 API-NBA
 
 SportsRadar 
+
+NBA_API (stats.nba.com)
+

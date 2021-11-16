@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import teamsJSON from "../json/teams.json";
-import { useGetTeamsFromSourceQuery } from '../services/data.nba';
 import { Card, Row, Col, Input } from 'antd'
 import { Link } from "react-router-dom"
 import { async } from "async";

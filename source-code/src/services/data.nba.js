@@ -28,7 +28,5 @@ export const data_nba = createApi({
 });
 
 export const {
-    useGetTeamsFromSourceQuery,
-    useGetSpecificTeamQuery,
     useGetPlayerSeasonsQuery
 } = data_nba;
