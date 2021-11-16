@@ -35,6 +35,7 @@ const PlayerDetails = () => {
     const imgURL = `https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${imgSRC}.png`
 
     const playerDetails = playerInfo?.CommonPlayerInfo[0]
+    const playerName = playerInfo?.CommonPlayerInfo[0].DISPLAY_FIRST_LAST
     console.log(playerDetails)
     
     return (
@@ -50,15 +51,18 @@ const PlayerDetails = () => {
                 </Col>
            </Row> */}
            <Row>
-                <Col xs={24} xl={8}>
-                    <img src = {imgURL} alt = "NBA"/>
+                <Col>
+                    <img src = {imgURL} alt = "NBA" className="fill"/>
+                </Col>
+                <Col >
+                    <h1>{playerName}</h1>
                 </Col>
                 <Col xs={24} xl={8}>
 
                 </Col>
-                <Col xs={24} xl={8}>
-
-                </Col>
+            </Row>
+            <Row>
+                Hi
             </Row>
         </Container>
     )

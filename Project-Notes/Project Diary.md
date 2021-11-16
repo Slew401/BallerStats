@@ -23,13 +23,24 @@ Team Finder Player Feed with Sorting Bar - Functional JavaScript (Filter)
 
 ## Sprint 3 27th of October - 4th of November 
 
+Testing elements
+
+Write UP Introduction and Aims and Objectives, Stack Comparison
+
+## Sprint 4 4th of November - 15th of November 
+
+API Research 
+
+First Stage of Background Writeup
+
+## Sprint 5 16th Nov -- 
+
+
 Individual Team Page built 
 
 Individual Player Page built
 
-Testing elements
-
-Write UP Introduction and Aims and Objectives, Stack Comparison
+Further Documentation Write UP 
 
 # References
 
@@ -122,6 +133,14 @@ Chart.js
 
 D3
 
+Python 
+
+FLASK
+
+FLASK CORS
+
+Proxy server
+
 ### APIs
 
 Free-NBA
@@ -131,4 +150,5 @@ API-NBA
 SportsRadar 
 
 NBA_API (stats.nba.com)
+
 
