@@ -10,6 +10,7 @@ const PlayerFinder = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchData, setSearchData] = useState(allPlayers);
     const [players, setPlayers] = useState(playerJSON);
+    
     // useEffect(() => {
     //     setSearchData(allPlayers)
     //     const filteredPlayers = players.filter()

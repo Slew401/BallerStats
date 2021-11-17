@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router'
-import {Row, Col, Input } from 'antd'
+import {Row, Col, Input, Divider } from 'antd'
 import { useGetPlayerSeasonsQuery } from '../services/data.nba';
 
 const PlayerDetails = () => {
@@ -9,8 +9,9 @@ const PlayerDetails = () => {
     const [playerInfo, setPlayerInfo] = useState(null);    
     const params = useParams()
     const playerId = params?.playerid    
-    const {data, isFetching} = useGetPlayerSeasonsQuery(playerId)
-    console.log(data);
+    
+    const {data, isFetching} = useGetPlayerSeasonsQuery(playerId)    
+    
     const headers = {
         'Host': 'stats.nba.com',
         'Connection': 'keep-alive',
@@ -40,29 +41,21 @@ const PlayerDetails = () => {
     
     return (
         <Container className = "content-container">
-           {/* <Row> 
-                <Col className = "player-detail-container">
-                    <Col span = {4}>
-                        <img src = {imgURL} alt = "NBA"/>
-                    </Col>
-                    <Col span = {12}>
-                        Hilo
-                    </Col>
-                </Col>
-           </Row> */}
+           <Divider/>
            <Row>
                 <Col>
                     <img src = {imgURL} alt = "NBA" className="fill"/>
                 </Col>
-                <Col >
+                <Col>
                     <h1>{playerName}</h1>
                 </Col>
                 <Col xs={24} xl={8}>
 
                 </Col>
             </Row>
-            <Row>
-                Hi
+            <Divider><h1>Stats Tables</h1></Divider>
+            <Row className="player-detail-container">
+            
             </Row>
         </Container>
     )
