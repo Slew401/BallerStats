@@ -23,10 +23,14 @@ export const data_nba = createApi({
     endpoints: (builder) => ({
        getPlayerSeasons: builder.query({
            query: (player_id) => createRequest(`/getPlayerSeasons?player_id=${player_id}`)
+       }),
+       getBoxScore: builder.query({
+           query: () => createRequest("/boxscore")
        })
     })
 });
 
 export const {
-    useGetPlayerSeasonsQuery
+    useGetPlayerSeasonsQuery, 
+    useGetBoxScore
 } = data_nba;

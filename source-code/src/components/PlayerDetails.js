@@ -10,8 +10,9 @@ const PlayerDetails = () => {
     const params = useParams()
     const playerId = params?.playerid    
     
-    const {data, isFetching} = useGetPlayerSeasonsQuery(playerId)    
-    
+    const {data:playerSeasons, isFetching} = useGetPlayerSeasonsQuery(playerId)    
+    const [seasons, setSeasons] = useState(playerSeasons?.SeasonRankingsPostSeason);
+
     const headers = {
         'Host': 'stats.nba.com',
         'Connection': 'keep-alive',
@@ -37,7 +38,7 @@ const PlayerDetails = () => {
 
     const playerDetails = playerInfo?.CommonPlayerInfo[0]
     const playerName = playerInfo?.CommonPlayerInfo[0].DISPLAY_FIRST_LAST
-    console.log(playerDetails)
+    console.log(playerSeasons)
     
     return (
         <Container className = "content-container">

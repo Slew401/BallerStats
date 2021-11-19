@@ -15,8 +15,7 @@ const PlayerFinder = () => {
     //     setSearchData(allPlayers)
     //     const filteredPlayers = players.filter()
     // })
-    
-    console.log(allPlayers.league.standard)
+        
     useEffect(() => {
         setPlayers(playerJSON); 
         const filteredData = playerJSON.filter((player) => player.firstName.toLowerCase().includes(searchTerm.toLowerCase()) )
