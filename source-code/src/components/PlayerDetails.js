@@ -39,6 +39,7 @@ const PlayerDetails = () => {
     const playerDetails = playerInfo?.CommonPlayerInfo[0]
     const playerName = playerInfo?.CommonPlayerInfo[0].DISPLAY_FIRST_LAST
     console.log(playerSeasons)
+    console.log(playerDetails)
     
     return (
         <Container className = "content-container">
@@ -49,9 +50,6 @@ const PlayerDetails = () => {
                 </Col>
                 <Col>
                     <h1>{playerName}</h1>
-                </Col>
-                <Col xs={24} xl={8}>
-
                 </Col>
             </Row>
             <Divider><h1>Stats Tables</h1></Divider>
