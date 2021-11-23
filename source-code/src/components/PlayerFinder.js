@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import playerJSON from "../json/players.json"
 import allPlayers from "../json/allPlayerData.json"
+import activePlayers from "../json/activePlayers.json"
 import { Card, Row, Col, Input } from 'antd'
 import { Container, Placeholder } from 'react-bootstrap'
 import { Link } from "react-router-dom"
@@ -10,12 +11,7 @@ const PlayerFinder = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchData, setSearchData] = useState(allPlayers);
     const [players, setPlayers] = useState(playerJSON);
-    
-    // useEffect(() => {
-    //     setSearchData(allPlayers)
-    //     const filteredPlayers = players.filter()
-    // })
-        
+     
     useEffect(() => {
         setPlayers(playerJSON); 
         const filteredData = playerJSON.filter((player) => player.firstName.toLowerCase().includes(searchTerm.toLowerCase()) )

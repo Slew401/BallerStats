@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router'
 import {Row, Col, Input, Divider } from 'antd'
-import { useGetPlayerSeasonsQuery } from '../services/data.nba';
+import { useGetPlayerSeasonsQuery } from '../services/data.nba'
+import PlayerDetailsTable from "./tables/PlayerDetailsTable"
 
 const PlayerDetails = () => {
     const [teams, setTeams] = useState(null);
@@ -38,23 +39,23 @@ const PlayerDetails = () => {
 
     const playerDetails = playerInfo?.CommonPlayerInfo[0]
     const playerName = playerInfo?.CommonPlayerInfo[0].DISPLAY_FIRST_LAST
-    console.log(playerSeasons)
-    console.log(playerDetails)
+    // console.log(playerSeasons.SeasonTotalsRegularSeason)
+    // console.log(playerDetails)
     
     return (
         <Container className = "content-container">
            <Divider/>
-           <Row>
+           <Row style ={{border :"1px solid red"}}>
                 <Col>
-                    <img src = {imgURL} alt = "NBA" className="fill"/>
+                    <div style ={{border :"1px solid red"}}><img src = {imgURL} alt = "NBA" className="fill"/></div>
                 </Col>
                 <Col>
-                    <h1>{playerName}</h1>
+                    <h1 style ={{border :"1px solid red"}}>{playerName}</h1>
                 </Col>
             </Row>
             <Divider><h1>Stats Tables</h1></Divider>
             <Row className="player-detail-container">
-            
+                <PlayerDetailsTable id = {playerId} />
             </Row>
         </Container>
     )

@@ -11,7 +11,9 @@ import store from "./app/store"
 ReactDOM.render(
     <Router> 
         <Provider store = {store}>
-            <App/>
+            <React.StrictMode>
+                <App/>
+            </React.StrictMode>
         </Provider>
     </Router>, document.getElementById('root')); 
     

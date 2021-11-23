@@ -13,11 +13,20 @@ const Teamdetails = () => {
     const [teamDetails, setTeamDetails] = useState(null)
     
     // useEffect(() => {
-    //     fetch(`${url}/prod/v1/2021/teams/${teamId}/leaders.json`)
-    //     .then(res => res.json())
-    //     .then(res => setTeamDetails(res.league.standard));
+    //     fetch("https://nba-player-individual-stats.p.rapidapi.com/players/firstname?firstname=luka", {
+    //         "method": "GET",
+    //         "headers": {
+    //             "x-rapidapi-host": "nba-player-individual-stats.p.rapidapi.com",
+    //             "x-rapidapi-key": "6e009c2a9amsh074604bd5f4bf85p1222d5jsne72d4a262676"
+    //         }
+    //     })
+    //     .then(response => {
+    //         console.log(response.json());
+    //     })
+    //     .catch(err => {
+    //         console.error(err);
+    //     });
     // },[teamId])
-    // console.log(data); 
 
     return (
         <Container className = "content">
