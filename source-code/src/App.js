@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigation, TeamFinder, PlayerFinder, Glossary, Home, PlayerComparison, PlayerDetails, Teamdetails } from './components'
+import { Navigation, TeamFinder, PlayerFinder, Glossary, Home, Analysis, PlayerDetails, Teamdetails } from './components'
 import { Switch, Route, Redirect} from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 import { Layout } from "antd"; 
@@ -27,8 +27,8 @@ const App = () => {
                     <Route path = "/Glossary">
                         <Glossary/>
                     </Route>
-                    <Route path = "/PlayerComparison">
-                        <PlayerComparison/>
+                    <Route path = "/Analysis">
+                        <Analysis/>
                     </Route>
                     <Route path = "/teams/:teamid">
                         <Teamdetails/>

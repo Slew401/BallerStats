@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router'
-import {Row, Col, Input, Divider } from 'antd'
+import {Row, Col, Input, Divider, Tabs} from 'antd'
 import { useGetPlayerSeasonsQuery } from '../services/data.nba'
 import PlayerDetailsTable from "./tables/PlayerDetailsTable"
 
+
 const PlayerDetails = () => {
     const [teams, setTeams] = useState(null);
-    const [playerInfo, setPlayerInfo] = useState(null);    
+    const [playerInfo, setPlayerInfo] = useState();    
     const params = useParams()
     const playerId = params?.playerid    
     
@@ -27,6 +28,7 @@ const PlayerDetails = () => {
         'Accept': 'application/json'
     }
 
+
     const url = "http://localhost:5000"
     useEffect(() => {
         fetch(`${url}/api/getPlayerInfo?player_id=${playerId}`, headers)
@@ -34,13 +36,12 @@ const PlayerDetails = () => {
         .then(res => setPlayerInfo(res));
     },[])
 
+
     const imgSRC = playerInfo?.CommonPlayerInfo[0]?.PERSON_ID
     const imgURL = `https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${imgSRC}.png`
 
     const playerDetails = playerInfo?.CommonPlayerInfo[0]
     const playerName = playerInfo?.CommonPlayerInfo[0].DISPLAY_FIRST_LAST
-    // console.log(playerSeasons.SeasonTotalsRegularSeason)
-    // console.log(playerDetails)
     
     return (
         <Container className = "content-container">

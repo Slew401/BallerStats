@@ -1,33 +1,35 @@
 import React, { useEffect, useState} from 'react'
 import playerJSON from "../json/players.json"
-import allPlayers from "../json/allPlayerData.json"
 import activePlayers from "../json/activePlayers.json"
-import { Card, Row, Col, Input } from 'antd'
-import { Container, Placeholder } from 'react-bootstrap'
+import { Card, Row, Col } from 'antd'
+import { Container } from 'react-bootstrap'
 import { Link } from "react-router-dom"
+import PlayerFinderButton from "./searchbars/PlayerFinderButton.js"
+
+import Search from "./searchbars/Search.js"
 
 
 const PlayerFinder = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchData, setSearchData] = useState(allPlayers);
+    const [searchData, setSearchData] = useState(activePlayers);
     const [players, setPlayers] = useState(playerJSON);
-     
-    useEffect(() => {
-        setPlayers(playerJSON); 
-        const filteredData = playerJSON.filter((player) => player.firstName.toLowerCase().includes(searchTerm.toLowerCase()) )
-        setPlayers(filteredData); 
-    },[searchTerm])
+    
+    function onSearch(val) {
+        console.log('search:', val);
+    }
 
+    useEffect(() => {
+        const filteredData = activePlayers.filter((player) => player.full_name.toLowerCase().includes(searchTerm.toLowerCase()) )
+        // console.log(filteredData)
+    },[searchTerm])
+    
     return (
         <Container className = "content">                            
             <h1 className = "title-head">Player Finder</h1>
             <em><p style ={{textAlign: 'center'}}>Search for Players here or select the Player Cards below to view their stats</p></em>
-            <div className = "search">
-                <Input style = {{width: 300}} 
-                className = "search"
-                placeholder = "Search for Players Here"
-                onChange = {(e) => setSearchTerm(e.target.value)}></Input>
-            </div>
+            <span className = "search">
+                <Search button = {PlayerFinderButton}/>               
+            </span>
             <Row gutter = {[20,20]}>
                 {players?.map((player) => (
                     <Col xs ={24} sm = {12} lg = {6} className = "team-card" key = {player.id}>

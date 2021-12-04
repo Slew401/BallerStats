@@ -4,6 +4,10 @@ export const tableColumns = [
         accessor: 'SEASON_ID'
     },
     {
+        Header: 'Team',
+        accessor: 'TEAM_ABBREVIATION'
+    },
+    {
         Header: 'GP',
         accessor: 'GP'
 
@@ -17,6 +21,30 @@ export const tableColumns = [
         accessor: 'PTS'
     },
     {
+        Header: 'OREB',
+        accessor: 'OREB'
+    },
+    {
+        Header: 'DREB',
+        accessor: 'DREB'
+    },
+    {
+        Header: 'TREB',
+        accessor: 'REB'
+    },
+    {
+        Header: 'Assists',
+        accessor: 'AST'
+    },
+    {
+        Header: 'Blocks',
+        accessor: 'BLK'
+    },
+    {
+        Header: 'Steals',
+        accessor : 'STL'
+    },
+    {
         Header: 'FGM',
         accessor: 'FGM'
     }, 
@@ -28,14 +56,7 @@ export const tableColumns = [
         Header: 'FG%',
         accessor: 'FG_PCT'
     },
-    {
-        Header: 'OREB',
-        accessor: 'OREB'
-    },
-    {
-        Header: 'TREB',
-        accessor: 'REB'
-    },
+   
     {
         Header: '3FG%',
         accessor: 'FG3_PCT'

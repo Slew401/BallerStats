@@ -24,7 +24,11 @@ const PlayerDetailsTable = (props) => {
             getPlayerData();
         }
     },[])
-    
+      const ast = "AST"
+      let points = []
+      console.log(seasonData)
+      seasonData.forEach(season => points.push(season[`${ast}`]))
+      console.log(points)
     const {
         getTableProps,
         getTableBodyProps,

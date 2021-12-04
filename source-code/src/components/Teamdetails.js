@@ -11,7 +11,7 @@ const Teamdetails = () => {
     const params = useParams()
     const teamId = params?.teamid
     const [teamDetails, setTeamDetails] = useState(null)
-    
+    console.log(teamId)
     // useEffect(() => {
     //     fetch("https://nba-player-individual-stats.p.rapidapi.com/players/firstname?firstname=luka", {
     //         "method": "GET",
