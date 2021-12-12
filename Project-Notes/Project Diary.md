@@ -33,7 +33,7 @@ API Research
 
 First Stage of Background Writeup
 
-## Sprint 5 16th Nov -- 
+## Sprint 5 16th Nov -- 10th of December
 
 
 Individual Team Page built 
@@ -41,6 +41,18 @@ Individual Team Page built
 Individual Player Page built
 
 Further Documentation Write UP 
+
+## Sprint 6 11th of December to 20th of December
+
+Single Stat Analysis 
+
+Two point scatter Analysis
+
+Authentication
+
+Research Frontend and Backend Deployment
+
+User Testing and Development Written Up.
 
 # References
 

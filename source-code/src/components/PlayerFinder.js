@@ -18,11 +18,6 @@ const PlayerFinder = () => {
         console.log('search:', val);
     }
 
-    useEffect(() => {
-        const filteredData = activePlayers.filter((player) => player.full_name.toLowerCase().includes(searchTerm.toLowerCase()) )
-        // console.log(filteredData)
-    },[searchTerm])
-    
     return (
         <Container className = "content">                            
             <h1 className = "title-head">Player Finder</h1>

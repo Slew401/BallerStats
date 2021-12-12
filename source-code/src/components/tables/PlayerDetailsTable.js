@@ -4,6 +4,7 @@ import {useTable} from 'react-table'
 import {tableColumns as COLUMNS} from './columnFiles/PlayerDetailsColumns'
 import axios from 'axios'
 import './Table.css'
+
 const PlayerDetailsTable = (props) => {    
     const {id} = props
     const [seasonData, setSeasonData] = useState([]);
@@ -68,3 +69,15 @@ const PlayerDetailsTable = (props) => {
 }
 
 export default PlayerDetailsTable
+
+ // const dataLoad = () => {
+    //     setPlayerObjects(...playerObjects, { 
+    //         stat : targetStat,
+    //         playerId: playerID,
+    //         playerSeasons: playerSeasons
+    //     })
+    // }
+
+    // useEffect(() => {
+    //     dataLoad()
+    // },[playerID])

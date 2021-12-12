@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navigation, TeamFinder, PlayerFinder, Glossary, Home, Analysis, PlayerDetails, Teamdetails } from './components'
-import { Switch, Route, Redirect} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 import { Layout } from "antd"; 
 
