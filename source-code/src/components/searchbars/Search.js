@@ -22,7 +22,6 @@ const Search = ({ button }) => {
         <span style={customStyles} >
             <span className="wrapper">
                 <Select 
-                    isClearable 
                     options = {data}
                     isSearchable = {true}
                     onChange = {handleInputChange}

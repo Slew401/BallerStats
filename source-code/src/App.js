@@ -13,35 +13,37 @@ const App = () => {
                 <Navigation/>
            </div>
             <div className = "main-body">
-            <Layout >
-                <Switch>
-                    <Route path = "/Home">
-                        <Home/>
-                    </Route>
-                    <Route path = "/PlayerFinder">
-                        <PlayerFinder/>
-                    </Route>
-                    <Route path = "/TeamFinder">
-                        <TeamFinder/>
-                    </Route>
-                    <Route path = "/Glossary">
-                        <Glossary/>
-                    </Route>
-                    <Route path = "/Analysis">
-                        <Analysis/>
-                    </Route>
-                    <Route path = "/teams/:teamid">
-                        <Teamdetails/>
-                    </Route>
-                    <Route path = "/players/:playerid">
-                        <PlayerDetails/>
-                    </Route>
-                    {/* Default Route */}
-                    <Route path = "/">
-                        <Home/>
-                    </Route>
-                </Switch>
-            </Layout>
+            <Container >
+                <>
+                    <Switch>
+                        <Route path = "/Home">
+                            <Home/>
+                        </Route>
+                        <Route path = "/PlayerFinder">
+                            <PlayerFinder/>
+                        </Route>
+                        <Route path = "/TeamFinder">
+                            <TeamFinder/>
+                        </Route>
+                        <Route path = "/Glossary">
+                            <Glossary/>
+                        </Route>
+                        <Route path = "/Analysis">
+                            <Analysis/>
+                        </Route>
+                        <Route path = "/teams/:teamid">
+                            <Teamdetails/>
+                        </Route>
+                        <Route path = "/players/:playerid">
+                            <PlayerDetails/>
+                        </Route>
+                        {/* Default Route */}
+                        <Route path = "/">
+                            <Home/>
+                        </Route>
+                    </Switch>
+                </>
+            </Container>
             </div>
         </div>
     )

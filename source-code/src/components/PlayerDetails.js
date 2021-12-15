@@ -45,7 +45,7 @@ const PlayerDetails = () => {
     
     return (
         <Container className = "content-container">
-           <Divider/>
+           {/* <Divider/>
            <Row style ={{border :"1px solid red"}}>
                 <Col>
                     <div style ={{border :"1px solid red"}}><img src = {imgURL} alt = "NBA" className="fill"/></div>
@@ -57,7 +57,7 @@ const PlayerDetails = () => {
             <Divider><h1>Stats Tables</h1></Divider>
             <Row className="player-detail-container">
                 <PlayerDetailsTable id = {playerId} />
-            </Row>
+            </Row> */}
         </Container>
     )
 }
