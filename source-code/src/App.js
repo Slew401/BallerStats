@@ -28,7 +28,7 @@ const App = () => {
                         <Route path = "/Glossary">
                             <Glossary/>
                         </Route>
-                        <Route path = "/Analysis">
+                        <Route path = "/Analysis/SAS">
                             <Analysis/>
                         </Route>
                         <Route path = "/teams/:teamid">

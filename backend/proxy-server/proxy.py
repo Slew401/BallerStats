@@ -16,6 +16,8 @@ from nba_api.stats.endpoints import boxscoreadvancedv2
 from nba_api.stats.endpoints import playbyplayv2
 from nba_api.stats.endpoints import videodetails
 from nba_api.stats.endpoints import playergamelogs
+from nba_api.stats.endpoints import teaminfocommon
+
 from nba_api.stats.static import players
 
 ## FLASK RUN FUNCTIONS
@@ -100,9 +102,17 @@ def idSearch():
 # def teamInfo():
     
 
-@app.route("/api/getTeam", methods=['GET'])
-def getTeam():
+@app.route("/api/getTeamRoster", methods=['GET'])
+def getTeamRoster():
     t_id = request.args.get('team_id')
     preResponse = commonteamroster.CommonTeamRoster(team_id=t_id)
     res = preResponse.get_normalized_json()
     return res
+
+@app.route("/api/getTeamBasicInfo", methods=['GET'])
+def getTeamBasicInfo():
+    t_id = request.args.get('team_id')
+    preResponse = teaminfocommon.TeamInfoCommon(team_id=t_id)
+    res = preResponse.get_normalized_json()
+    return res
+

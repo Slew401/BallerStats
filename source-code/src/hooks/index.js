@@ -1,0 +1,1 @@
+export {default as useGetTeamDetails} from './useGetTeamDetails.js'

@@ -17,9 +17,9 @@ const Navigation = () => {
                         <Nav.Link as={Link} to = {"/TeamFinder"}>Teams </Nav.Link>
                         <Nav.Link as={Link} to = {"/Glossary"}>Glossary</Nav.Link> 
                         <NavDropdown title="Analysis" id="basic-nav-dropdown">
-                            <NavDropdown.Item as={Link} to = {"/Analysis"}>Single Stat Analysis</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to = {"/Analysis"}>Two Stat Analysis</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to = {"/Analysis"}>Shot Chart Generators</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to = {"/Analysis/sas"}>Single Stat Analysis</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to = {"/Analysis/tsa"}>Two Stat Analysis</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to = {"/Analysis/scg"}>Shot Chart Generators</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>            
