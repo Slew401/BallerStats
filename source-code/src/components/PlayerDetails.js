@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router'
 import {Row, Col, Input, Divider, Tabs} from 'antd'
-import { useGetPlayerSeasonsQuery } from '../services/data.nba'
+import { useGetPlayerSeasonsQuery, useGetPlayerInfo} from '../services/data.nba.js'
 import PlayerDetailsTable from "./tables/PlayerDetailsTable"
 
 
 const PlayerDetails = () => {
     const [teams, setTeams] = useState(null);
     const [playerInfo, setPlayerInfo] = useState();    
-    const params = useParams()
-    const playerId = params?.playerid    
-    
-    const {data:playerSeasons, isFetching} = useGetPlayerSeasonsQuery(playerId)    
-    const [seasons, setSeasons] = useState(playerSeasons?.SeasonRankingsPostSeason);
+    const params = useParams();
+    const playerId = params?.playerid;    
+    // const {data, isLoading} = useGetPlayerInfo();
+
+    const {data:playerSeasons, isFetching} = useGetPlayerSeasonsQuery(playerId);
+    const [seasons, setSeasons] = useState(playerSeasons?.SeasonRankingsPostSeason)
 
     const headers = {
         'Host': 'stats.nba.com',
@@ -27,7 +28,7 @@ const PlayerDetails = () => {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
     }
-
+    console.log()
 
     const url = "http://localhost:5000"
     useEffect(() => {
@@ -42,10 +43,10 @@ const PlayerDetails = () => {
 
     const playerDetails = playerInfo?.CommonPlayerInfo[0]
     const playerName = playerInfo?.CommonPlayerInfo[0].DISPLAY_FIRST_LAST
-    
+    console.log(playerDetails)
     return (
         <Container className = "content-container">
-           {/* <Divider/>
+           <Divider/>
            <Row style ={{border :"1px solid red"}}>
                 <Col>
                     <div style ={{border :"1px solid red"}}><img src = {imgURL} alt = "NBA" className="fill"/></div>
@@ -56,8 +57,10 @@ const PlayerDetails = () => {
             </Row>
             <Divider><h1>Stats Tables</h1></Divider>
             <Row className="player-detail-container">
-                <PlayerDetailsTable id = {playerId} />
-            </Row> */}
+            
+                    <PlayerDetailsTable id = {playerId} />
+              
+            </Row>
         </Container>
     )
 }

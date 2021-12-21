@@ -22,9 +22,9 @@ const PlayerFinder = () => {
         <Container className = "content">                            
             <h1 className = "title-head">Player Finder</h1>
             <em><p style ={{textAlign: 'center'}}>Search for Players here or select the Player Cards below to view their stats</p></em>
-            {/* <span className = "search">
+            <span className = "search">
                 <Search button = {PlayerFinderButton}/>               
-            </span> */}
+            </span>
             <Row gutter = {[20,20]}>
                 {players?.map((player) => (
                     <Col xs ={24} sm = {12} lg = {6} className = "team-card" key = {player.id}>

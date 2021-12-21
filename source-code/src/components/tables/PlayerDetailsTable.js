@@ -24,12 +24,8 @@ const PlayerDetailsTable = (props) => {
         if(loadingData) {
             getPlayerData();
         }
-    },[])
-      const ast = "AST"
-      let points = []
-      console.log(seasonData)
-      seasonData.forEach(season => points.push(season[`${ast}`]))
-      console.log(points)
+    })
+
     const {
         getTableProps,
         getTableBodyProps,
@@ -39,29 +35,29 @@ const PlayerDetailsTable = (props) => {
     } = useTable({ columns, data:seasonData });
     
     return (
-        <div className="table">
-            <table {...getTableProps()}>
-      <thead>
-        {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
-          prepareRow(row)
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map(cell => {
-                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-              })}
+      <div className="table">
+      <table {...getTableProps()}>
+        <thead>
+          {headerGroups.map(headerGroup => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map(column => (
+                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              ))}
             </tr>
-          )
-        })}
-      </tbody>
+          ))}
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {rows.map((row, i) => {
+            prepareRow(row)
+            return (
+              <tr {...row.getRowProps()}>
+                {row.cells.map(cell => {
+                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                })}
+              </tr>
+            )
+          })}
+        </tbody>
     </table>
             
         </div>

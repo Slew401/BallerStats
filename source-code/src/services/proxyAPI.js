@@ -17,24 +17,24 @@ const headers = {
 
 const createRequest = url => ({ url , headers: headers})
 
-export const data_nba = createApi({
-    reducerPath: 'createApi', 
+export const proxyAPI = createApi({
+    reducerPath: 'proxyAPI', 
     baseQuery: fetchBaseQuery({ baseUrl }),
     endpoints: (builder) => ({
        getPlayerSeasons: builder.query({
-           query: (player_id) => createRequest(`/api/getPlayerSeasons?player_id=${player_id}`)
+           query: (player_id) => createRequest(`/api/getPlayerSeasons?player_id=${player_id}`),
        }),
-       getPlayerInfo: builder.query({
-           query: (player_id) => createRequest(`/api/getPlayerInfo?player_id=${player_id}`)
+       getPlayersInfo: builder.query({
+           query: (player_id) => createRequest(`/api/getPlayerInfo?player_id=${player_id}`),
        }),
        getAllPlayersInfo: builder.query({
-           query: () => createRequest(`/api/getAllPlayers`)
+           query: () => createRequest(`/api/getAllPlayers`),
        }),
     })
 });
 
 export const {
     useGetPlayerSeasonsQuery, 
-    useGetPlayerInfo,
-    useGetAllPlayers,
-} = data_nba;
+    useGetPlayersInfoQuery,
+    useGetAllPlayersQuery,
+} = proxyAPI;
