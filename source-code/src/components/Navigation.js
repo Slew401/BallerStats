@@ -14,6 +14,7 @@ const Navigation = () => {
                     <Nav className = "nav-style">
                         <Nav.Link as={Link} to = {"/Home"} className = "nav-style">Home</Nav.Link>
                         <Nav.Link as={Link} to = {"/PlayerFinder"}>Players</Nav.Link>
+                        <Nav.Link as={Link} to = {"/Analysis"}>Analysis</Nav.Link>
                         <Nav.Link as={Link} to = {"/TeamFinder"}>Teams </Nav.Link>
                         <Nav.Link as={Link} to = {"/Glossary"}>Glossary</Nav.Link> 
                         <NavDropdown title="Analysis" id="basic-nav-dropdown">

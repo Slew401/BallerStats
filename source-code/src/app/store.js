@@ -1,13 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 
+import { playersApi } from '../services/playerApi'
 import { data_nba } from '../services/data.nba'
-import { proxyAPI } from '../services/proxyAPI'
 
 export default configureStore({
     reducer: {
+        [playersApi.reducerPath]: playersApi.reducer, 
         [data_nba.reducerPath]:data_nba.reducer, 
-        [proxyAPI.reducerPath]:proxyAPI.reducer,
-    }
+    }, middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(data_nba.middleware)
 })
-
-// , middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(data_nba.middleware)

@@ -1,6 +1,6 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
-const baseUrl = "http://127.0.0.1:5000"
+const baseUrl = "http://127.0.0.1:5000/api"
 
 const headers = {
     'Host': 'stats.nba.com',
@@ -22,19 +22,15 @@ export const data_nba = createApi({
     baseQuery: fetchBaseQuery({ baseUrl }),
     endpoints: (builder) => ({
        getPlayerSeasons: builder.query({
-           query: (player_id) => createRequest(`/api/getPlayerSeasons?player_id=${player_id}`)
+           query: (player_id) => createRequest(`/getPlayerSeasons?player_id=${player_id}`)
        }),
-       getPlayerInfo: builder.query({
-           query: (player_id) => createRequest(`/api/getPlayerInfo?player_id=${player_id}`)
-       }),
-       getAllPlayersInfo: builder.query({
-           query: () => createRequest(`/api/getAllPlayers`)
-       }),
+       getBoxScore: builder.query({
+           query: () => createRequest("/boxscore")
+       })
     })
 });
 
 export const {
     useGetPlayerSeasonsQuery, 
-    useGetPlayerInfo,
-    useGetAllPlayers,
+    useGetBoxScore
 } = data_nba;
