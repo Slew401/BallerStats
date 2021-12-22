@@ -8,17 +8,7 @@ import { async } from "async";
 const TeamFinder = () => {
     const [teams, setTeams] = useState(null)
     let teamName; 
-    useEffect(() => {
-        fetch("https://nba-player-individual-stats.p.rapidapi.com/teams", {
-        method: "GET",
-        withCredential:true, 
-        headers: {
-            'x-rapidapi-host': 'nba-player-individual-stats.p.rapidapi.com',
-            'x-rapidapi-key': '6e009c2a9amsh074604bd5f4bf85p1222d5jsne72d4a262676'
-        }
-        }).then(res => res.json())
-        .then(data => setTeams(data)); 
-    },[])
+    
         console.log(teams);
         return (
             <Container className = "content">

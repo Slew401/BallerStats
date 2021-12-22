@@ -1,40 +1,35 @@
-import React, { useEffect, useState} from 'react'
-import { useGetBoxScore } from "../services/data.nba"
+import React, { useState} from 'react'
 import { Container } from 'react-bootstrap'
 import activePlayers from "../json/activePlayers.json"
 import { Select, Col , Row, Divider, Button} from "antd"
-import { SearchOutlined } from '@ant-design/icons';
-import { useGetPlayerSeasonsQuery } from '../services/data.nba'
-import Linechart from './charts/Linechart.js'
+
+import Linechart from './dataCharts/LineChart.js'
 const { Option } = Select
 
 const Analysis = () => {
-    const [value, setValue] = useState(); 
     const [targetStat, setTargetStat] = useState("PTS");
-    const [playerID, setPlayerID] = useState();
-    const {data:playerData, isFetching} = useGetPlayerSeasonsQuery(playerID)
-    const [playerSeasons, setSeasons] = useState(); 
-    const [playerObjects, setPlayerObjects] = useState();
-
-    useEffect(() => {
-        setSeasons(playerData?.SeasonTotalsRegularSeason)
-    })
-    
-    console.log(playerSeasons)
+    const [playerOneID, setPlayerOneID] = useState();
+    const [playerTwoID, setPlayerTwoID] = useState();
+    const [playerThreeID, setPlayerThreeID] = useState();
 
     const basicStats = ["PTS", "OREB" ,'DREB','TREB','AST','BLK','STL','FGM','FGA','FG%','3FG%','FT%',]
     
-    const dataLoad = key => {
-        setPlayerID(key)
+    const setPlayerOne = key => {
+        // e.preventDefault();
+        setPlayerOneID(key)
+        console.log(key)
     }
-    
-    
+        
+    const setPlayerTwo = key => {
+        setPlayerTwoID(key)
+        console.log(key)
+    }
+
     return (
         <Container fluid>
             <Row>
                 <Col span = {6}>
-                    <div style ={{border :"1px solid red"}} className = "data-card">
-                        <h3 style = {{textAlign : "center", marginTop : "20px"}}>Stat Visualizer</h3>
+                    <div className = "data-card">
                         <Divider style = {{}}/>
                         <h5 style = {{textAlign : "center"}}>Pick a Stat</h5>
                         <span className = "data-search">
@@ -45,7 +40,7 @@ const Analysis = () => {
                                 placeholder="Select a Statistic"
                                 optionFilterProp="children"
                                 width = {"50px"}
-                                onChange={(key) =>  setTargetStat(key)}
+                                onSelect={(key) => setTargetStat(key)}
                                 filterOption={(input, option) =>
                                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                 }
@@ -61,27 +56,45 @@ const Analysis = () => {
                             <h5 style = {{textAlign : "center"}}>Pick Players</h5>
                             <span className = "data-search">
                             <Select
+                                allowClear
                                 showSearch
                                 style = {{width:200}}
-                                placeholder="Select A Player"
+                                placeholder="Select Player One"
                                 optionFilterProp="children"
-                                onChange={(key) => setPlayerID(key)}
+                                onSelect={(key) => setPlayerOne(key)}
                             >
                             {activePlayers.map((player) =>
                                 <Option key = {player.id}>{player.full_name}</Option>
                             )}
                             </Select>
-                            <Button onClick={() => console.log(playerID)}>Add Player</Button>
+                            {/* <Button>Add Player</Button> */}
                         </span>
-                            <Divider/>        
+                        <span className = "data-search">
+                            <Select
+                                allowClear
+                                showSearch
+                                style = {{width:200}}
+                                placeholder="Select Player Two"
+                                optionFilterProp="children"
+                                onSelect={(key) => setPlayerTwo(key)}
+                            >
+                            {activePlayers.map((player) =>
+                                <Option key = {player.id}>{player.full_name}</Option>
+                            )}
+                            </Select>
+                            {/* <Button>Add Player</Button> */}
                         </span>
+                            <Divider/>   
+                                 
+                        </span>
+                        
                         </div>
-                        <h5 style = {{textAlign : "center"}}>Loaded Players</h5>
-
                     </div>
                 </Col>
                 <Col>
-                <Linechart stat = {targetStat} playerData = {playerSeasons} />
+                <div className="graph-card">
+                    <Linechart stat = {targetStat} playerOne = {playerOneID} playerTwo = {playerTwoID} />
+                </div>
                 </Col>
             </Row>
         </Container>

@@ -7,6 +7,7 @@ from pandas import DataFrame
 import json
 
 ## SWAR NBA_API IMPORTS
+from nba_api.stats.endpoints import teaminfocommon
 from nba_api.stats.endpoints import commonplayerinfo
 from nba_api.stats.endpoints import commonteamroster
 from nba_api.stats.endpoints import commonallplayers
@@ -16,8 +17,6 @@ from nba_api.stats.endpoints import boxscoreadvancedv2
 from nba_api.stats.endpoints import playbyplayv2
 from nba_api.stats.endpoints import videodetails
 from nba_api.stats.endpoints import playergamelogs
-from nba_api.stats.endpoints import teaminfocommon
-
 from nba_api.stats.static import players
 
 ## FLASK RUN FUNCTIONS
@@ -35,14 +34,6 @@ def getPlayerInfo():
     p_id = request.args.get('player_id')
     preRes = commonplayerinfo.CommonPlayerInfo(player_id=p_id); 
     res = preRes.get_normalized_json()
-    return res
-
-
-@app.route("/api/getTeamInfo", methods=['GET'])
-def getTeamInfo():
-    t_id = request.args.get('team_id')
-    preResponse = commonteamroster.CommonTeamRoster(team_id=t_id)
-    res = preResponse.get_normalized_json()
     return res
 
 @app.route("/api/getAllPlayers", methods=['GET'])
