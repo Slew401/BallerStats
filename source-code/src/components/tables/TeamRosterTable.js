@@ -1,38 +1,38 @@
-import React, {useState, useEffect, useMemo} from 'react'
-import { useGetPlayerSeasonsQuery } from "../../services/data.nba"
+import React, { useState, useEffect, useMemo} from 'react'
+import { useParams } from 'react-router'
+import {tableColumns as COLUMNS} from './columnFiles/TeamDetailsColumn'
 import {useTable} from 'react-table'
-import {tableColumns as COLUMNS} from './columnFiles/PlayerDetailsColumns'
 import axios from 'axios'
 import './Table.css'
 
-const PlayerDetailsTable = (props) => {    
-    const {id} = props
-    const [seasonData, setSeasonData] = useState([]);
+function TeamRosterTable(props) {
+    const params = useParams()
+    const teamId = params?.teamid
+    const [teamRoster, setRoster] = useState([])
     const [loadingData, setLoadingData] = useState(true)
-    
     const columns = useMemo(() => COLUMNS, [])
-    
-    useEffect(() => {
-        async function getPlayerData(){    
-            await axios.get(`http://127.0.0.1:5000/api/getPlayerSeasons?player_id=${id}`)
-            .then((response) =>{
-                console.log(response?.data?.SeasonTotalsRegularSeason);
-                setSeasonData(response?.data?.SeasonTotalsRegularSeason);
+    console.log(teamId)
+    useEffect(() =>{
+        async function getTeamRoster(){
+            await axios.get(`http://127.0.0.1:5000/api/getTeamRoster?team_id=${props.id}`)
+            .then((response) => {
+                console.log(response?.data?.CommonTeamRoster)
+                setRoster(response?.data?.CommonTeamRoster)
                 setLoadingData(false);
-            });     
+            })
         }
-        if(loadingData) {
-            getPlayerData();
+        if(loadingData){
+            getTeamRoster()
         }
     },[])
-
+    // console.log(teamRoster)
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
         rows,
         prepareRow,
-    } = useTable({ columns, data:seasonData });
+    } = useTable({ columns, data:teamRoster });
     
     return (
         <div className="table">
@@ -59,20 +59,8 @@ const PlayerDetailsTable = (props) => {
         })}
       </tbody>
     </table>
-      </div>
+            
+        </div>
     )
 }
-
-export default PlayerDetailsTable
-
- // const dataLoad = () => {
-    //     setPlayerObjects(...playerObjects, { 
-    //         stat : targetStat,
-    //         playerId: playerID,
-    //         playerSeasons: playerSeasons
-    //     })
-    // }
-
-    // useEffect(() => {
-    //     dataLoad()
-    // },[playerID])
+export default TeamRosterTable
