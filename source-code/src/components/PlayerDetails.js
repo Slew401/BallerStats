@@ -44,7 +44,7 @@ const PlayerDetails = () => {
     const playerName = playerInfo?.CommonPlayerInfo[0].DISPLAY_FIRST_LAST
     
     return (
-        <Container className = "content-container">
+        <Container>
            <Divider/>
            <Row style ={{border :"1px solid red"}}>
                 <Col>

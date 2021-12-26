@@ -1,21 +1,16 @@
-import React, { useState} from 'react'
+import React, {useState} from 'react'
 import { Container } from 'react-bootstrap'
 import activePlayers from "../json/activePlayers.json"
-import { Select, Col , Row, Divider, Button} from "antd"
-
-import Linechart from './dataCharts/LineChart.js'
+import { Select, Col , Row, Divider } from "antd"
+import TSAChart from "./dataCharts/TSAChart.js"
 const { Option } = Select
-
-const Analysis = () => {
-    const [targetStat, setTargetStat] = useState("PTS");
+function TSAnalysis() {
+    const [statOne, setStatOne] = useState("PTS");
+    const [statTwo, setStatTwo] = useState("FG_PCT");
     const [playerOneID, setPlayerOneID] = useState(2544);
     const [playerTwoID, setPlayerTwoID] = useState(201939);
     const [playerThreeID, setPlayerThreeID] = useState(202695);
     const [playerFourID, setPlayerFourID] = useState(201142);
-    const [pOneInfo, setPOneInfo] = useState();
-    const [pTwoInfo, setPTwoInfo] = useState();
-    const [pThreeInfo, setPThreeInfo] = useState();
-    const [pFourInfo, setPFourInfo] = useState();
 
 
     const basicStats = ["PTS", "OREB" ,'DREB','REB','AST','BLK','STL','FGM','FGA','FG_PCT',"FG3_PCT",'FTA','FTM','FT_PCT',]
@@ -37,16 +32,14 @@ const Analysis = () => {
     const setPlayerFour = key => {
         setPlayerFourID(key)
     }
-
     return (
         <Container fluid>
             <Row>
                 <Col span = {6}>
-                    <div className = "data-card">
+                    <div className = "TSA-card">
                         <Divider style = {{}}/>
                         <h5 style = {{textAlign : "center"}}>Pick a Stat</h5>
                         <span className = "data-search">
-                            
                             <Select
                                 showSearch
                                 defaultValue = {"PTS"}
@@ -54,7 +47,25 @@ const Analysis = () => {
                                 placeholder="Select a Statistic"
                                 optionFilterProp="children"
                                 width = {"50px"}
-                                onSelect={(key) => setTargetStat(key)}
+                                onSelect={(key) => setStatOne(key)}
+                                filterOption={(input, option) =>
+                                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                }
+                            >
+                            {basicStats.map((stat) => 
+                                <Option key = {stat}>{stat}</Option>
+                            )}
+                            </Select>
+                        </span>
+                        <span className = "data-search">
+                            <Select
+                                showSearch
+                                defaultValue = {"FG_PCT"}
+                                style={{ width: 200 }}
+                                placeholder="Select a Statistic"
+                                optionFilterProp="children"
+                                width = {"50px"}
+                                onSelect={(key) => setStatTwo(key)}
                                 filterOption={(input, option) =>
                                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                 }
@@ -67,7 +78,6 @@ const Analysis = () => {
                         <Divider/>
                        <div> 
                         <span className="wrapper">   
-                            
                             <h5 style = {{textAlign : "center"}}>Pick Players</h5>
                             <span className = "data-search">
                             <Select
@@ -141,19 +151,20 @@ const Analysis = () => {
                     </div>
                 </Col>
                 <Col>
-                <>
-                    <Linechart 
-                        stat={targetStat} 
-                        playerOne={playerOneID} 
-                        playerTwo={playerTwoID} 
-                        playerThree={playerThreeID} 
-                        playerFour={playerFourID}
-                    />
-                </>
+                    <div className="graph-card">
+                        <TSAChart 
+                            statOne={statOne} 
+                            statTwo={statTwo} 
+                            playerOne={playerOneID}
+                            playerTwo={playerTwoID}
+                            playerThree={playerThreeID}
+                            playerFour={playerFourID}
+                         />
+                    </div>
                 </Col>
             </Row>
         </Container>
     )
 }
 
-export default Analysis
+export default TSAnalysis

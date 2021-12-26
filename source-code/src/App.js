@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigation, TeamFinder, PlayerFinder, Glossary, Home, Analysis, PlayerDetails, Teamdetails } from './components'
+import { Navigation, TeamFinder, PlayerFinder, Glossary, Home, Analysis, PlayerDetails, Teamdetails, Shotcharts, TSAnalysis } from './components'
 import { Switch, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 import { Layout } from "antd"; 
@@ -27,6 +27,12 @@ const App = () => {
                         </Route>
                         <Route path = "/Glossary">
                             <Glossary/>
+                        </Route>
+                        <Route path = "/Analysis/TSA">
+                            <TSAnalysis/>
+                        </Route>
+                        <Route path = "/Analysis/SHC">
+                            <Shotcharts/>
                         </Route>
                         <Route path = "/Analysis">
                             <Analysis/>

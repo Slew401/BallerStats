@@ -179,6 +179,16 @@
   width: 300px;
 }
 
+
+.TSA-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+    height: 500px;
+    margin: 6rem auto 8.1rem auto;
+    width: 300px;
+  }
+
 .data-card-header {
     margin-top: 25px; 
     
@@ -188,9 +198,9 @@
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-    height: 600px;
+    height: 500px;
     margin: 6rem auto 8.1rem auto;
-    width: 800px;
+    width: 950px;
   }
 
   #teams-grid {
@@ -241,3 +251,4 @@
 .span-header {
     display: inline;
 }
+

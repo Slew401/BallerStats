@@ -6,5 +6,6 @@ export {default as Navigation} from "./Navigation.js";
 export {default as Analysis} from "./Analysis";
 export {default as Teamdetails} from "./Teamdetails";
 export {default as PlayerDetails} from "./PlayerDetails";
-
+export {default as TSAnalysis} from "./TSAnalysis"
+export {default as Shotcharts} from "./Shotcharts"
 
