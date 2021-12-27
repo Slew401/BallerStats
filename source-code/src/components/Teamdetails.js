@@ -4,6 +4,8 @@ import { useParams } from 'react-router'
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 import TeamRosterTable from './tables/TeamRosterTable'
+import { gameLogColumns as COLUMNS } from './tables/columnFiles/GameLogColumns'
+import GameLogTable from "./tables/GameLogTable"
 
 const Teamdetails = () => {
     const location = useLocation()
@@ -11,8 +13,10 @@ const Teamdetails = () => {
     const params = useParams()
     const teamId = params?.teamid
     const [teamInfo, setTeamInfo] = useState()
+    const [gameLogs, setGameLogs] = useState([])
+
     const teamImgUrl = `https://cdn.nba.com/logos/nba/${teamId}/global/L/logo.svg`
-    console.log(teamId)
+    // console.log(teamId)
     
     useEffect(() =>{
         async function getTeamInfo(){
@@ -23,8 +27,18 @@ const Teamdetails = () => {
         }
         getTeamInfo()
     },[])
-     
-    console.log(teamInfo)
+    
+    useEffect(() =>{
+        async function getTeamGameLogs(){
+            await axios.get(`http://127.0.0.1:5000/api/teamGamelogs?team_id=${teamId}`)
+            .then((response) => {
+                setGameLogs(response?.data?.TeamGameLog)
+            });
+        }
+        getTeamGameLogs()
+    },[])
+
+    // console.log(teamInfo)
     return (
         <div id = "teams-grid">
             <div className="teams-card">
@@ -39,6 +53,9 @@ const Teamdetails = () => {
             </div>
             <div className="teams-graph-card">
                 <TeamRosterTable id = {teamId}/>
+            </div>
+            <div className="gamelog-card">
+                <GameLogTable gameLogs={gameLogs} COLUMNS = {COLUMNS}/>
             </div>
         </div>
     )
