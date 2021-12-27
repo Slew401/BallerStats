@@ -15,8 +15,8 @@ from nba_api.stats.endpoints import playerprofilev2
 from nba_api.stats.endpoints import shotchartdetail
 from nba_api.stats.endpoints import boxscoreadvancedv2
 from nba_api.stats.endpoints import playbyplayv2
-from nba_api.stats.endpoints import videodetails
-from nba_api.stats.endpoints import playergamelogs
+from nba_api.stats.endpoints import teamgamelog
+from nba_api.stats.endpoints import playergamelog
 from nba_api.stats.static import players
 
 ## FLASK RUN FUNCTIONS
@@ -67,11 +67,21 @@ def pb():
     res = preResponse.get_normalized_json()
     return res
 
-@app.route("/api/gamelogs", methods=['GET'])
-def gameLogs():
-    preResponse = playergamelogs.PlayerGameLogs(player_id_nullable=2544, season_nullable="2021-22",measure_type_player_game_logs_nullable="Advanced")
+@app.route("/api/playerGamelogs", methods=['GET'])
+def playerGameLogs():
+    p_id = request.args.get('player_id')
+    preResponse = playergamelog.PlayerGameLog(player_id=p_id)
     res = preResponse.get_normalized_json()
     return res
+
+
+@app.route("/api/playerGamelogsAdv", methods=['GET'])
+def playerGamelogsAdv():
+    p_id = request.args.get('player_id')
+    preResponse = playergamelogs.PlayerGameLogs(player_id_nullable=p_id, season_nullable="2021-22",measure_type_player_game_logs_nullable="Advanced")
+    res = preResponse.get_normalized_json()
+    return res
+
 
 @app.route("/api/playerSearch", methods=['GET'])
 def playerSearch():
@@ -107,3 +117,9 @@ def getTeamBasicInfo():
     res = preResponse.get_normalized_json()
     return res
 
+@app.route("/api/teamGamelogs", methods=['GET'])
+def teamGameLogs():
+    t_id = request.args.get('team_id')
+    preResponse = teamgamelog.TeamGameLog(team_id=t_id, season = "2021-22")
+    res = preResponse.get_normalized_json()
+    return res
