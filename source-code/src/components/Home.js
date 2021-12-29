@@ -1,18 +1,23 @@
 import React from 'react'
-import { Container, Row, Col} from 'react-bootstrap'
-
+import logo from './Logo.svg'
+import Login from './Authentication/Login'
 const Home = () => {
     return (
-        <div>
-            <Container className = "content">
-                <Row>
-                    <Col><b> Explore and Analyze your favorite NBA players with BallerStats</b> Your one stop shop for NBA player Statistics.
-                    Build various Graphs and Data Visualizations exploring Basic and Advanced Stats, Shot Charts and up to date news on Every player and team in the league, and 
-                    feel free to share it across the web!
-                    </Col>
-                <Col className = "col-size"> IMAGE</Col>
-                </Row>
-            </Container>
+        <div id = "home-grid">
+            <div id = "home-text">
+                <h2><b> Explore and Analyze your favorite NBA players with BallerStats</b></h2> 
+                <p className = "filler-text">
+                Your one-stop-shop for NBA Data. 
+                Build various graphs and data visualizations comparing up to four players on various 
+                individual statistical metrics, or analyse a pair of stats to gauge the 
+                relationship between them. Build per-season and per-game 
+                shot charts to see how your favourite player is performing.
+                Comes complete with login functionality to save graphs to your account. </p>
+            </div>
+            <div id = "home-image">
+                <img src = {logo} width = {475} height = {475} alt = "NBA"/>
+            </div>
+            {/* <Login/> */}
         </div>
     )
 }

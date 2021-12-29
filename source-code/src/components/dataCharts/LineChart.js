@@ -111,8 +111,6 @@ const Linechart = ({ stat, playerOne, playerTwo, playerThree, playerFour }) => {
 
     console.log(firstPlayer?.stat.length)
     
-    const pOneName = pOneInfo?.DISPLAY_FIRST_LAST;
-    console.log(pOneName)
     playerOneSeasonData?.forEach(season => firstPlayer?.stat.push(season[`${stat}`]))     
     playerTwoSeasonData?.forEach(season => secondPlayer?.stat.push(season[`${stat}`]))   
     playerThreeSeasonData?.forEach(season => thirdPlayer?.stat.push(season[`${stat}`]))

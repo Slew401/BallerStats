@@ -6,9 +6,9 @@ import logo from './Logo.svg'
 const Navigation = () => {
     return (
         <div>
-            <Navbar bg="bball" expand="lg">
+            <Navbar bg="bball" expand="lg" fixed="top">
                 <Link to = {'/Home'}><img className = "ball-image" src = {logo} alt = "logo"></img></Link>
-                <Link to = {`/Home`}><Navbar.Brand><b>BUCKETSTATS</b></Navbar.Brand></Link>
+                <Link to = {`/Home`}><Navbar.Brand><b>BALLERSTATS</b></Navbar.Brand></Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className = "nav-style">
@@ -21,6 +21,7 @@ const Navigation = () => {
                             <NavDropdown.Item as={Link} to = {"/Analysis/TSA"}>Two Stat Analysis</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to = {"/Analysis/SHC"}>Shot Charts</NavDropdown.Item>
                         </NavDropdown>
+                        <Nav.Link as={Link} to = {"/Login"} className = "nav-style">Login</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>            
             </Navbar>

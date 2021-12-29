@@ -97,6 +97,7 @@ function TSAChart({ playerOne, playerTwo, playerThree, playerFour, statOne, stat
         'x': season[`${statOne}`],
         'y': season[`${statTwo}`]
     }))
+    
     playerTwoSeasonData?.forEach(season => secondPlayer?.stat.push({
         'x': season[`${statOne}`],
         'y': season[`${statTwo}`]

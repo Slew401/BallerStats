@@ -12,11 +12,6 @@ const Analysis = () => {
     const [playerTwoID, setPlayerTwoID] = useState(201939);
     const [playerThreeID, setPlayerThreeID] = useState(202695);
     const [playerFourID, setPlayerFourID] = useState(201142);
-    const [pOneInfo, setPOneInfo] = useState();
-    const [pTwoInfo, setPTwoInfo] = useState();
-    const [pThreeInfo, setPThreeInfo] = useState();
-    const [pFourInfo, setPFourInfo] = useState();
-
 
     const basicStats = ["PTS", "OREB" ,'DREB','REB','AST','BLK','STL','FGM','FGA','FG_PCT',"FG3_PCT",'FTA','FTM','FT_PCT',]
     

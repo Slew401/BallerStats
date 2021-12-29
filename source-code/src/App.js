@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigation, TeamFinder, PlayerFinder, Glossary, Home, Analysis, PlayerDetails, Teamdetails, Shotcharts, TSAnalysis } from './components'
+import { Navigation, TeamFinder, PlayerFinder, Glossary, Home, Analysis, PlayerDetails, Teamdetails, Shotcharts, TSAnalysis, Login} from './components'
 import { Switch, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 import { Layout } from "antd"; 
@@ -12,8 +12,8 @@ const App = () => {
            <div className = "header">
                 <Navigation/>
            </div>
-            <div className = "main-body">
-            <Container >
+            <div >
+            <Container className = "main">
                 <>
                     <Switch>
                         <Route path = "/Home">
@@ -42,6 +42,9 @@ const App = () => {
                         </Route>
                         <Route path = "/players/:playerid">
                             <PlayerDetails/>
+                        </Route>
+                        <Route path = "/Login">
+                            <Login/>
                         </Route>
                         {/* Default Route */}
                         <Route path = "/">

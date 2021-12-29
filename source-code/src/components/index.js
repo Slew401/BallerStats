@@ -8,4 +8,5 @@ export {default as Teamdetails} from "./Teamdetails";
 export {default as PlayerDetails} from "./PlayerDetails";
 export {default as TSAnalysis} from "./TSAnalysis"
 export {default as Shotcharts} from "./Shotcharts"
+export {default as Login} from "./Authentication/Login"
 
