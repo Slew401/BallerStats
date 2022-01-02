@@ -1,9 +1,20 @@
-import React from 'react'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
-import { Link } from "react-router-dom"
+import React, {useEffect} from 'react'
+import { Navbar, Nav, NavDropdown, Button } from 'react-bootstrap'
+import { Link, useHistory } from "react-router-dom"
 import logo from './Logo.svg'
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db, logout } from "../firebase";
 
 const Navigation = () => {
+    const [user, loading, error] = useAuthState(auth)
+    const history = useHistory()
+    useEffect(() => {
+        if (user){
+            return
+        }
+        if(!user) history.replace("/")
+    })
+    console.log(user)
     return (
         <div>
             <Navbar bg="bball" expand="lg" fixed="top">
@@ -21,7 +32,14 @@ const Navigation = () => {
                             <NavDropdown.Item as={Link} to = {"/Analysis/TSA"}>Two Stat Analysis</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to = {"/Analysis/SHC"}>Shot Charts</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link as={Link} to = {"/Login"} className = "nav-style">Login</Nav.Link>
+                        {user ? 
+                        <>
+                        <Nav.Link as={Link} to = {"/Dashboard"} className = "nav-style">Dashboard</Nav.Link>
+                        <Button variant="outline" onClick={logout}>Logout</Button>
+                        </>
+                            : 
+                            <Nav.Link as={Link} to = {"/Login"} className = "nav-style">Login</Nav.Link>
+                        } 
                     </Nav>
                 </Navbar.Collapse>            
             </Navbar>

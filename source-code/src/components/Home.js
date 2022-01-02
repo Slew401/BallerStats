@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from './Logo.svg'
-import Login from './Authentication/Login'
+
+
 const Home = () => {
     return (
         <div id = "home-grid">
