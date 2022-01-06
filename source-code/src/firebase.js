@@ -1,6 +1,8 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { getStorage, ref, list } from "firebase/storage";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyDcVlu3J1lDdZK638q5-P2rIfTv99aW0FA",
@@ -14,6 +16,8 @@ const firebaseConfig = {
   const app = firebase.initializeApp(firebaseConfig);
   const auth = app.auth();
   const db = app.firestore();
+  const storage = getStorage(app); 
+  const storageRef = ref(storage, "images/"); 
   const googleProvider = new firebase.auth.GoogleAuthProvider();
   const signInWithGoogle = async () => {
     try {
@@ -76,6 +80,9 @@ const firebaseConfig = {
   export {
     auth,
     db,
+    app,
+    storage,
+    storageRef,
     signInWithGoogle,
     signInWithEmailAndPassword,
     registerWithEmailAndPassword,

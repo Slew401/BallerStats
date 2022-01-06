@@ -8,13 +8,7 @@ import { auth, db, logout } from "../firebase";
 const Navigation = () => {
     const [user, loading, error] = useAuthState(auth)
     const history = useHistory()
-    useEffect(() => {
-        if (user){
-            return
-        }
-        if(!user) history.replace("/")
-    })
-    console.log(user)
+
     return (
         <div>
             <Navbar bg="bball" expand="lg" fixed="top">
@@ -34,11 +28,14 @@ const Navigation = () => {
                         </NavDropdown>
                         {user ? 
                         <>
-                        <Nav.Link as={Link} to = {"/Dashboard"} className = "nav-style">Dashboard</Nav.Link>
-                        <Button variant="outline" onClick={logout}>Logout</Button>
+                            <Nav.Link as={Link} to = {"/Dashboard"} className = "nav-style">Dashboard</Nav.Link>
+                            <Button variant="outline" onClick={logout}>Logout</Button>
                         </>
                             : 
+                            <>
+                            <Nav.Link as={Link} to = {"/Register"} className = "nav-style">Register</Nav.Link>
                             <Nav.Link as={Link} to = {"/Login"} className = "nav-style">Login</Nav.Link>
+                            </>
                         } 
                     </Nav>
                 </Navbar.Collapse>            

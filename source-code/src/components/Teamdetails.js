@@ -6,7 +6,7 @@ import axios from 'axios'
 import TeamRosterTable from './tables/TeamRosterTable'
 import { gameLogColumns as COLUMNS } from './tables/columnFiles/GameLogColumns'
 import GameLogTable from "./tables/GameLogTable"
-
+import { url } from "../url"
 const Teamdetails = () => {
     const location = useLocation()
     const { title } = location.state
@@ -20,7 +20,7 @@ const Teamdetails = () => {
     
     useEffect(() =>{
         async function getTeamInfo(){
-            await axios.get(`http://127.0.0.1:5000/api/getTeamBasicInfo?team_id=${teamId}`)
+            await axios.get(`${url}/getTeamBasicInfo?team_id=${teamId}`)
             .then((response) => {
                 setTeamInfo(response?.data?.TeamInfoCommon[0])
             });
@@ -30,12 +30,22 @@ const Teamdetails = () => {
     
     useEffect(() =>{
         async function getTeamGameLogs(){
-            await axios.get(`http://127.0.0.1:5000/api/teamGamelogs?team_id=${teamId}`)
+            await axios.get(`${url}/teamGamelogs?team_id=${teamId}`)
             .then((response) => {
                 setGameLogs(response?.data?.TeamGameLog)
             });
         }
         getTeamGameLogs()
+    },[])
+
+    useEffect(() =>{
+        async function getTeamStats(){
+            await axios.get(`${url}/teamStatsAdvanced`)
+            .then((response) => {
+                console.log(response?.data?.LeagueDashTeamStats)
+            });
+        }
+        getTeamStats()
     },[])
 
     // console.log(teamInfo)

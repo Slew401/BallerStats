@@ -49,7 +49,8 @@ export const gameLogColumns = [
     },
     {
         Header: 'FT%',
-        accessor: 'FT_PCT'
+        accessor: 'FT_PCT',
+        // sortType: 'compareNumericString'
     },
     {
         Header: 'Turnover',
@@ -64,3 +65,4 @@ export const gameLogColumns = [
         accessor: 'PLUS_MINUS'
     }
 ]
+

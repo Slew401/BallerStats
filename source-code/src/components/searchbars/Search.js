@@ -1,10 +1,11 @@
 import React, { useState }from 'react'
 import Select from "react-select"
 import activePlayers from "../../json/activePlayers.json"
-
+import { useHistory } from 'react-router-dom'
 const Search = ({ button }) => {
     const [value, setValue] = useState()
     const Button = button
+    const history = useHistory()
     const data = activePlayers.map(({full_name, id}) => ({
         label: full_name,
         value: id,
@@ -18,13 +19,24 @@ const Search = ({ button }) => {
         maxWidth: '300px',
       }
     
-    return (
+    const executeLink = () => {
+         history.replace(`/players/${value}`)
+    }
+
+      const handleKeyDown = (e) => {
+        setValue(e.value)
+    }
+
+
+      return (
         <span style={customStyles} >
             <span className="wrapper">
                 <Select 
                     options = {data}
                     isSearchable = {true}
                     onChange = {handleInputChange}
+                    onKeyDown = {handleKeyDown}
+                    onKeyUp = {executeLink}
                     >
                 </Select>
                 <Button value = {value}/>

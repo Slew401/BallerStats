@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import { auth, signInWithEmailAndPassword, signInWithGoogle, storageRef } from "../../firebase";
 import { useGetPlayerSeasonsQuery } from '../../services/data.nba';
 import {
     Chart as ChartJS,
@@ -11,8 +12,9 @@ import {
     Tooltip,
     Legend,
   } from 'chart.js';
+import { url } from '../../url'
 import { Line } from 'react-chartjs-2'
-
+import SaveGraph from '../SaveGraph'
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -40,37 +42,41 @@ const Linechart = ({ stat, playerOne, playerTwo, playerThree, playerFour }) => {
     const [pThreeInfo, setPThreeInfo] = useState();
     const [pFourInfo, setPFourInfo] = useState();
 
+    const [canvas, setCanvas] = useState();
+
      useEffect(() => {
        async function getPOneData(){    
-           await axios.get(`http://127.0.0.1:5000/api/getPlayerInfo?player_id=${playerOne}`)
+           await axios.get(`${url}/getPlayerInfo?player_id=${playerOne}`)
            .then((response) =>{
                   setPOneInfo(response?.data?.CommonPlayerInfo[0]?.DISPLAY_FIRST_LAST)
            });     
        }
         getPOneData();
     },[playerOne])
-      console.log(pOneInfo)
-         useEffect(() => {
+      
+    useEffect(() => {
        async function getPTwoData(){    
-           await axios.get(`http://127.0.0.1:5000/api/getPlayerInfo?player_id=${playerTwo}`)
+           await axios.get(`${url}/getPlayerInfo?player_id=${playerTwo}`)
            .then((response) =>{
                   setPTwoInfo(response?.data?.CommonPlayerInfo[0]?.DISPLAY_FIRST_LAST)
            });     
        }
         getPTwoData();
     },[playerTwo])
-         useEffect(() => {
+    
+    useEffect(() => {
        async function getPThreeData(){    
-           await axios.get(`http://127.0.0.1:5000/api/getPlayerInfo?player_id=${playerThree}`)
+           await axios.get(`${url}/getPlayerInfo?player_id=${playerThree}`)
            .then((response) =>{
                   setPThreeInfo(response?.data?.CommonPlayerInfo[0]?.DISPLAY_FIRST_LAST)
            });     
        }
         getPThreeData();
     },[playerThree])
-         useEffect(() => {
+   
+    useEffect(() => {
        async function getPFourData(){    
-           await axios.get(`http://127.0.0.1:5000/api/getPlayerInfo?player_id=${playerFour}`)
+           await axios.get(`${url}/getPlayerInfo?player_id=${playerFour}`)
            .then((response) =>{
                   setPFourInfo(response?.data?.CommonPlayerInfo[0]?.DISPLAY_FIRST_LAST)
            });     
@@ -83,7 +89,6 @@ const Linechart = ({ stat, playerOne, playerTwo, playerThree, playerFour }) => {
       playerName: pOneInfo,
       statlength: stat.length
     }
-    console.log(firstPlayer?.playerName)
     const secondPlayer = {
       stat : [],
       playerName: pTwoInfo,
@@ -109,14 +114,19 @@ const Linechart = ({ stat, playerOne, playerTwo, playerThree, playerFour }) => {
       setPlayerFourSeasonData(playerFourData?.SeasonTotalsRegularSeason)
     })
 
-    console.log(firstPlayer?.stat.length)
     
     playerOneSeasonData?.forEach(season => firstPlayer?.stat.push(season[`${stat}`]))     
     playerTwoSeasonData?.forEach(season => secondPlayer?.stat.push(season[`${stat}`]))   
     playerThreeSeasonData?.forEach(season => thirdPlayer?.stat.push(season[`${stat}`]))
     playerFourSeasonData?.forEach(season => fourthPlayer?.stat.push(season[`${stat}`]))
   
-    const canvas = document.getElementById('graph')
+    
+
+    useEffect(() => {
+      const url = document?.getElementById('graph')?.toDataURL()
+      setCanvas(url)
+    })
+
     var chartOptions = {
       showScale: true,
       pointDot: true,
@@ -198,6 +208,9 @@ const Linechart = ({ stat, playerOne, playerTwo, playerThree, playerFour }) => {
            }
           }
         }}   id = "graph"/>
+        <div>
+          <SaveGraph canvas={canvas}/>
+        </div>
       </div>
     )
 }

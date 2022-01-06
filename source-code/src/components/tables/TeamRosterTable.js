@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo} from 'react'
 import { useParams } from 'react-router'
 import {tableColumns as COLUMNS} from './columnFiles/TeamDetailsColumn'
-import {useTable} from 'react-table'
+import {useTable, useSortBy} from 'react-table'
 import axios from 'axios'
 import './Table.css'
 
@@ -32,7 +32,7 @@ function TeamRosterTable(props) {
         headerGroups,
         rows,
         prepareRow,
-    } = useTable({ columns, data:teamRoster });
+    } = useTable({ columns, data:teamRoster }, useSortBy);
     
     return (
         <div className="table">
@@ -41,7 +41,15 @@ function TeamRosterTable(props) {
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              <th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render('Header')}
+              <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? ' 🔽'
+                        : ' 🔼'
+                      : ''}
+                  </span>
+              </th>
             ))}
           </tr>
         ))}

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useAuthState } from "react-firebase-hooks/auth"
 import { Link, useHistory } from "react-router-dom"
-import { auth, signInWithEmailAndPassword, signInWithGoogle } from "../../firebase";
+import { auth, signInWithEmailAndPassword, signInWithGoogle, storageRef } from "../../firebase";
 
 import "./Login.css" 
 function Login() {
@@ -15,6 +15,7 @@ function Login() {
       }
       if (user) history.replace("/");
     }, [user, loading]);
+    console.log(storageRef)
     return (
         <div className="login">
       <div className="login__container">

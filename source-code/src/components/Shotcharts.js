@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import * as d3 from 'd3'
+import { url } from "../url"
 
 function Shotcharts() {
     const [shotData, setShotData] = useState()
     useEffect(() =>{
         async function getTeamInfo(){
-            await axios.get(`http://127.0.0.1:5000/api/shotChart`)
+            await axios.get(`${url}/shotChart`)
             .then((response) => {
                 setShotData(response?.data?.Shot_Chart_Detail)
             });

@@ -17,6 +17,7 @@ from nba_api.stats.endpoints import boxscoreadvancedv2
 from nba_api.stats.endpoints import playbyplayv2
 from nba_api.stats.endpoints import teamgamelog
 from nba_api.stats.endpoints import playergamelog
+from nba_api.stats.endpoints import leaguedashteamstats
 from nba_api.stats.static import players
 
 ## FLASK RUN FUNCTIONS
@@ -26,7 +27,7 @@ CORS(app) ## Allows bypass of CORS issues with
 ## Flask Localhost greeting
 @app.route("/")
 def hello():
-    return "Hello"
+    return "Hello Baby"
 
 ## API CALLING FUNCTIONS 
 @app.route("/api/getPlayerInfo" , methods=['GET'])
@@ -122,4 +123,10 @@ def teamGameLogs():
     t_id = request.args.get('team_id')
     preResponse = teamgamelog.TeamGameLog(team_id=t_id, season = "2021-22")
     res = preResponse.get_normalized_json()
+    return res
+
+@app.route("/api/teamStatsAdvanced", methods=['GET'])
+def teamStats():
+    preRes = leaguedashteamstats.LeagueDashTeamStats(per_mode_detailed="PerGame", measure_type_detailed_defense="Advanced")
+    res = preRes.get_normalized_json()
     return res

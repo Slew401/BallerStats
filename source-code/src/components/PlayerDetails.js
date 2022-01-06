@@ -4,6 +4,8 @@ import axios from 'axios'
 import PlayerDetailsTable from "./tables/PlayerDetailsTable"
 import GameLogTable from "./tables/GameLogTable"
 import { gameLogColumns as COLUMNS } from './tables/columnFiles/GameLogColumns'
+import { url } from "../url"
+import {Divider} from "antd"
 
 const PlayerDetails = () => {
     const [playerInfo, setPlayerInfo] = useState();    
@@ -24,21 +26,21 @@ const PlayerDetails = () => {
         'Accept': 'application/json'
     }
     
-    const url = "http://localhost:5000"
+    
     useEffect(() => {
-        fetch(`${url}/api/getPlayerInfo?player_id=${playerId}`, headers)
+        fetch(`${url}/getPlayerInfo?player_id=${playerId}`, headers)
         .then(res => res.json())
         .then((res)=> setPlayerInfo(res?.CommonPlayerInfo[0]))
     },[])
     useEffect(() => {
-        fetch(`${url}/api/getPlayerInfo?player_id=${playerId}`, headers)
+        fetch(`${url}/getPlayerInfo?player_id=${playerId}`, headers)
         .then(res => res.json())
         .then((res)=> setHeadLineStats(res?.PlayerHeadlineStats[0]))
     },[])
 
     useEffect(() =>{
         async function getPlayerGameLog(){
-            await axios.get(`http://127.0.0.1:5000/api/playerGamelogs?player_id=${playerId}`)
+            await axios.get(`${url}/playerGamelogs?player_id=${playerId}`)
             .then((response) => {
                 console.log(response)
                 setGameLogs(response?.data?.PlayerGameLog)
@@ -64,9 +66,11 @@ const PlayerDetails = () => {
                 </div>
             </div>
             <div className="teams-graph-card">
+                <Divider><h1>Season Stats</h1></Divider>
                 <PlayerDetailsTable id = {playerId} />
             </div>
             <div className="gamelog-card">
+                <Divider><h1>Gamelog</h1></Divider>
                 <GameLogTable gameLogs = {gameLogs} COLUMNS = {COLUMNS} />
             </div>
         </div>
@@ -74,19 +78,3 @@ const PlayerDetails = () => {
 }
 
 export default PlayerDetails
-        // <Container>
-        //    <Divider/>
-        //    <Row style ={{border :"1px solid red"}}>
-        //         <Col>
-        //             <div style ={{border :"1px solid red"}}>
-        //                 <img src = {imgURL} alt = "NBA" className="fill"/>
-        //             </div>
-        //         </Col>
-        //         <Col>
-        //             <h1 style ={{border :"1px solid red"}}>{playerName}</h1>
-        //         </Col>
-        //     </Row>
-        //     <Divider><h1>Stats Tables</h1></Divider>
-        //     <Row className="player-detail-container">
-        //     </Row>
-        // </Container>

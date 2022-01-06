@@ -10,6 +10,7 @@ import {
     Legend,
   } from 'chart.js';
   import { Bubble } from 'react-chartjs-2';
+  import { url } from '../../url'
 
 function TSAChart({ playerOne, playerTwo, playerThree, playerFour, statOne, statTwo }) {
     const [playerOneSeasonData, setPlayerOneSeasonsData] = useState();
@@ -34,7 +35,7 @@ function TSAChart({ playerOne, playerTwo, playerThree, playerFour, statOne, stat
       })
       useEffect(() => {
         async function getPOneData(){    
-            await axios.get(`http://127.0.0.1:5000/api/getPlayerInfo?player_id=${playerOne}`)
+            await axios.get(`${url}/getPlayerInfo?player_id=${playerOne}`)
             .then((response) =>{
                    setPOneInfo(response?.data?.CommonPlayerInfo[0]?.DISPLAY_FIRST_LAST)
             });     
@@ -43,7 +44,7 @@ function TSAChart({ playerOne, playerTwo, playerThree, playerFour, statOne, stat
      },[playerOne])
           useEffect(() => {
         async function getPTwoData(){    
-            await axios.get(`http://127.0.0.1:5000/api/getPlayerInfo?player_id=${playerTwo}`)
+            await axios.get(`${url}/getPlayerInfo?player_id=${playerTwo}`)
             .then((response) =>{
                    setPTwoInfo(response?.data?.CommonPlayerInfo[0]?.DISPLAY_FIRST_LAST)
             });     
@@ -52,7 +53,7 @@ function TSAChart({ playerOne, playerTwo, playerThree, playerFour, statOne, stat
      },[playerTwo])
           useEffect(() => {
         async function getPThreeData(){    
-            await axios.get(`http://127.0.0.1:5000/api/getPlayerInfo?player_id=${playerThree}`)
+            await axios.get(`${url}/getPlayerInfo?player_id=${playerThree}`)
             .then((response) =>{
                    setPThreeInfo(response?.data?.CommonPlayerInfo[0]?.DISPLAY_FIRST_LAST)
             });     
@@ -61,7 +62,7 @@ function TSAChart({ playerOne, playerTwo, playerThree, playerFour, statOne, stat
      },[playerThree])
           useEffect(() => {
         async function getPFourData(){    
-            await axios.get(`http://127.0.0.1:5000/api/getPlayerInfo?player_id=${playerFour}`)
+            await axios.get(`${url}/getPlayerInfo?player_id=${playerFour}`)
             .then((response) =>{
                    setPFourInfo(response?.data?.CommonPlayerInfo[0]?.DISPLAY_FIRST_LAST)
             });     

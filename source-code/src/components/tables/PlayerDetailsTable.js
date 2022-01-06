@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useMemo} from 'react'
 import { useGetPlayerSeasonsQuery } from "../../services/data.nba"
-import {useTable} from 'react-table'
+import { useTable, useSortBy} from 'react-table'
 import {tableColumns as COLUMNS} from './columnFiles/PlayerDetailsColumns'
 import axios from 'axios'
 import './Table.css'
@@ -32,7 +32,7 @@ const PlayerDetailsTable = (props) => {
         headerGroups,
         rows,
         prepareRow,
-    } = useTable({ columns, data:seasonData });
+    } = useTable({ columns, data:seasonData }, useSortBy);
     
     return (
         <div className="table">
@@ -41,7 +41,15 @@ const PlayerDetailsTable = (props) => {
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              <th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render('Header')}
+              <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? ' 🔽'
+                        : ' 🔼'
+                      : ''}
+                  </span>
+              </th>
             ))}
           </tr>
         ))}

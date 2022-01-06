@@ -5,6 +5,7 @@ import { Card, Row, Col } from 'antd'
 import { Container } from 'react-bootstrap'
 import { Link } from "react-router-dom"
 import PlayerFinderButton from "./searchbars/PlayerFinderButton.js"
+import { auth, signInWithEmailAndPassword, signInWithGoogle, storageRef } from "../firebase";
 
 import Search from "./searchbars/Search.js"
 
@@ -17,7 +18,7 @@ const PlayerFinder = () => {
     function onSearch(val) {
         console.log('search:', val);
     }
-
+    console.log(storageRef)
     return (
         <Container className = "content">                            
             <h1 className = "title-head">Player Finder</h1>
