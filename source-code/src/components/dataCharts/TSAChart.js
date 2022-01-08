@@ -119,28 +119,33 @@ function TSAChart({ playerOne, playerTwo, playerThree, playerFour, statOne, stat
             label: `${pOneInfo}`,
             data: firstPlayer.stat,
             fill: true,
-            borderColor: "rgba(75,192,192,1)"
+            backgroundColor:"red",
+            borderColor: "red",
+            radius:5
           },
           {
             label: `${pTwoInfo}`,
             data: secondPlayer.stat,
             fill: false,
-            backgroundColor: "rgba(75,192,192,0.2)",
-            borderColor: "red"
+            backgroundColor: "blue",
+            borderColor: "blue",
+            radius:5
           },
           {
             label: `${pThreeInfo}`,
             data: thirdPlayer.stat,
             fill: false,
-            backgroundColor: "rgba(75,192,192,0.2)",
-            borderColor: "green"  
+            backgroundColor: "green",
+            borderColor: "green",
+            radius:5
           },
           {
             label: `${pFourInfo}`,
             data: fourthPlayer.stat,
             fill: false,
-            backgroundColor: "rgba(75,192,192,0.2)",
-            borderColor: "violet" 
+            backgroundColor: "purple",
+            borderColor: "violet",
+            radius:5
           }
         ]
       };

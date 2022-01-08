@@ -25,6 +25,7 @@ const Navigation = () => {
                             <NavDropdown.Item as={Link} to = {"/Analysis"}>Single Stat Analysis</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to = {"/Analysis/TSA"}>Two Stat Analysis</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to = {"/Analysis/SHC"}>Shot Charts</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to = {"/Analysis/TAS"}>Team Statistics </NavDropdown.Item>
                         </NavDropdown>
                         {user ? 
                         <>

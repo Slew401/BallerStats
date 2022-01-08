@@ -24,6 +24,7 @@ function GameLogTable({ gameLogs, COLUMNS }) {
     } = useTable({ columns, data:gameLogs, initialState: { pageIndex: 1 },}, useSortBy, usePagination);
     
     return (
+        <>
         <div className="table">
             <table {...getTableProps()}>
                 <thead>
@@ -55,8 +56,9 @@ function GameLogTable({ gameLogs, COLUMNS }) {
                         )
                     })}
             </tbody>
-            </table>  
-            <div className="control-panel">
+            </table>         
+    </div>
+    <div className="control-panel">
                 <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
                 {'<<'}
                 </button>{' '}
@@ -79,7 +81,7 @@ function GameLogTable({ gameLogs, COLUMNS }) {
                 | Go to page:{' '}
                 <input
                     type="number"
-                    defaultValue={pageIndex + 1}
+                    defaultValue={pageIndex}
                     onChange={e => {
                     const page = e.target.value ? Number(e.target.value) - 1 : 0
                     gotoPage(page)
@@ -100,7 +102,7 @@ function GameLogTable({ gameLogs, COLUMNS }) {
                 ))}
                 </select>
             </div>
-    </div>
+    </>
     )
 }
 

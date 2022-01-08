@@ -38,15 +38,7 @@ const Teamdetails = () => {
         getTeamGameLogs()
     },[])
 
-    useEffect(() =>{
-        async function getTeamStats(){
-            await axios.get(`${url}/teamStatsAdvanced`)
-            .then((response) => {
-                console.log(response?.data?.LeagueDashTeamStats)
-            });
-        }
-        getTeamStats()
-    },[])
+    
 
     // console.log(teamInfo)
     return (
