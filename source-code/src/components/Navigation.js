@@ -22,10 +22,10 @@ const Navigation = () => {
                         <Nav.Link as={Link} to = {"/TeamFinder"}>Teams </Nav.Link>
                         {/* <Nav.Link as={Link} to = {"/Glossary"}>Glossary</Nav.Link>  */}
                         <NavDropdown title="Analysis" id="basic-nav-dropdown">
-                            <NavDropdown.Item as={Link} to = {"/Analysis"}>Single Stat Analysis</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to = {"/Analysis/TSA"}>Two Stat Analysis</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to = {"/Analysis/SHC"}>Shot Charts</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to = {"/Analysis/TAS"}>Team Statistics </NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to = {"/Analysis"}>Basic Player Comparison</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to = {"/Analysis/TSA"}>XY Player Comparison</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to = {"/Analysis/SHC"}>Basic Team Comparison</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to = {"/Analysis/TAS"}>Advanced Team Comparison</NavDropdown.Item>
                         </NavDropdown>
                         {user ? 
                         <>

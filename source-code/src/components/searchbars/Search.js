@@ -29,6 +29,7 @@ const Search = ({ button }) => {
 
 
       return (
+        <>
         <span style={customStyles} >
             <span className="wrapper">
                 <Select 
@@ -39,9 +40,12 @@ const Search = ({ button }) => {
                     onKeyUp = {executeLink}
                     >
                 </Select>
-                <Button value = {value}/>
             </span>
         </span>  
+        <Button value = {value}/>
+
+        </>
+        
     )
 }
 export default Search

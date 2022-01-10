@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigation, TeamFinder, PlayerFinder, Glossary, Home, Analysis, PlayerDetails, Teamdetails, Shotcharts, TSAnalysis, Login, Register, Dashboard, Teamstats} from './components'
+import { Navigation, TeamFinder, PlayerFinder, Glossary, Home, Analysis, PlayerDetails, Teamdetails, Shotcharts, TSAnalysis, Login, Register, Dashboard, Teamstats, TeamBasicAnalysis} from './components'
 import { Switch, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 import { Layout } from "antd"; 
@@ -35,7 +35,7 @@ const App = () => {
                             <TSAnalysis/>
                         </Route>
                         <Route path = "/Analysis/SHC">
-                            <Shotcharts/>
+                            <TeamBasicAnalysis/>
                         </Route>
                         <Route path = "/Analysis">
                             <Analysis/>

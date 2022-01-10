@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import { auth, signInWithEmailAndPassword, signInWithGoogle, storageRef } from "../../firebase";
+import { auth } from "../../firebase";
 import { useGetPlayerSeasonsQuery } from '../../services/data.nba';
+import { useAuthState } from "react-firebase-hooks/auth";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -26,6 +27,7 @@ ChartJS.register(
   );
 
 const Linechart = ({ stat, playerOne, playerTwo, playerThree, playerFour }) => {
+  const [user, loading, error] = useAuthState(auth)
 
     const [playerOneSeasonData, setPlayerOneSeasonsData] = useState();
     const [playerTwoSeasonData, setPlayerTwoSeasonData] = useState();
@@ -195,6 +197,7 @@ const Linechart = ({ stat, playerOne, playerTwo, playerThree, playerFour }) => {
       };
 
     return (
+      <>
         <div className="graph-card">
          <Line className="" data = {data}  options={{
           plugins: {
@@ -208,11 +211,22 @@ const Linechart = ({ stat, playerOne, playerTwo, playerThree, playerFour }) => {
            }
           }
         }}   id = "graph"/>
-        <div>
-          <SaveGraph canvas={canvas}/>
-        </div>
       </div>
+      {user ? 
+      <div>
+          <SaveGraph canvas={canvas}/>
+      </div> 
+      
+      :
+      <></>
+      }
+      
+      </>
     )
 }
 
 export default Linechart
+
+
+
+

@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useGetPlayerSeasonsQuery } from '../../services/data.nba';
 import axios from 'axios'
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
+import SaveGraph from '../SaveGraph'
+
 import {
     Chart as ChartJS,
     LinearScale,
@@ -25,6 +29,8 @@ function TSAChart({ playerOne, playerTwo, playerThree, playerFour, statOne, stat
     const [pTwoInfo, setPTwoInfo] = useState();
     const [pThreeInfo, setPThreeInfo] = useState();
     const [pFourInfo, setPFourInfo] = useState();
+    const [canvas, setCanvas] = useState();
+    const [user, loading, error] = useAuthState(auth)
 
 
     useEffect(() => {
@@ -149,8 +155,15 @@ function TSAChart({ playerOne, playerTwo, playerThree, playerFour, statOne, stat
           }
         ]
       };
+
+      useEffect(() => {
+        const url = document?.getElementById('graph')?.toDataURL()
+        setCanvas(url)
+      })
+
     return (
-        <div className="graph-card">
+      <>
+        <div className="graph-card" >
             <Bubble className="" data={data} options={{
           plugins: {
             title: {
@@ -172,6 +185,15 @@ function TSAChart({ playerOne, playerTwo, playerThree, playerFour, statOne, stat
           }
         }}  id = "graph" />
         </div>
+        {user ? 
+          <div>
+              <SaveGraph canvas={canvas}/>
+          </div> 
+          
+              :
+              <></>
+              }
+      </>
     )
 }
 

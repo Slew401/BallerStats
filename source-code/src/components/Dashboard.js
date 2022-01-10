@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Tabs, Tab } from "react-bootstrap"
 import { app, auth } from "../firebase";
 import { ref, uploadString, getStorage, listAll} from "firebase/storage";
-
+import Gallery from './Gallery';
 function Dashboard() {
     const [uid, setUid] = useState(auth?.currentUser?.uid)
     
@@ -10,17 +10,15 @@ function Dashboard() {
     const storageRef = ref(storage, `${uid}/`)
     listAll(storageRef).then((res) => {
         res.items.forEach((item) => {
-            console.log(item)
+            // console.log(item)
         })
     })
+    // console.log(uid)
     return (
         <div className="main">
             <Tabs defaultActiveKey="home" id="Account Settings" className="mb-3">
                 <Tab eventKey="home" title="Graph Gallery">
-                
-                </Tab>
-                <Tab eventKey="profile" title="Account Settings">
-                
+                    <Gallery/>
                 </Tab>
             </Tabs>
         </div>

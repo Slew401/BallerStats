@@ -130,3 +130,9 @@ def teamStats():
     preRes = leaguedashteamstats.LeagueDashTeamStats(per_mode_detailed="PerGame", measure_type_detailed_defense="Advanced")
     res = preRes.get_normalized_json()
     return res
+
+@app.route("/api/teamStatsBasic", methods=['GET'])
+def teamBasicsStats():
+    preRes = leaguedashteamstats.LeagueDashTeamStats(per_mode_detailed="PerGame")
+    res = preRes.get_normalized_json()
+    return res

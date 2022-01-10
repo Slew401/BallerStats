@@ -49,6 +49,7 @@ const firebaseConfig = {
       alert(err.message);
     }
   };
+
   const registerWithEmailAndPassword = async (name, email, password) => {
     try {
       const res = await auth.createUserWithEmailAndPassword(email, password);
@@ -64,6 +65,7 @@ const firebaseConfig = {
       alert(err.message);
     }
   };
+  
   const sendPasswordResetEmail = async (email) => {
     try {
       await auth.sendPasswordResetEmail(email);

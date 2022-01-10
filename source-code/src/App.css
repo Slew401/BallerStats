@@ -199,7 +199,7 @@
     border-radius: 8px;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
     height: 550px;
-    margin: 6rem auto 8.1rem auto;
+    margin: 6rem auto 50px auto;
     width: 950px;
   }
 
@@ -310,3 +310,8 @@
     align-items: center;
 }
 
+.save-button{
+    background-color: rgb(250, 131, 32);
+    border-color: rgb(250, 131, 32);
+    color: black; 
+}

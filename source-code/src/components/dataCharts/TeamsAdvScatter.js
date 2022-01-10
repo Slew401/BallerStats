@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+import { useAuthState } from "react-firebase-hooks/auth";
 import { url } from '../../url'
+import { auth } from "../../firebase";
 import {
     Chart as ChartJS,
     LinearScale,
@@ -10,10 +12,13 @@ import {
     Legend,
   } from 'chart.js';
 import { Bubble } from 'react-chartjs-2';
+import SaveGraph from '../SaveGraph'
+
 function TeamsAdvScatter({statOne, statTwo}) {
     const [teams, setTeams] = useState()
     const [advStats, setAdvStats] = useState()
-
+    const [canvas, setCanvas] = useState()
+    const [user, loading, error] = useAuthState(auth)
     useEffect(() =>{
         async function getTeamStats(){
             await axios.get(`${url}/teamStatsAdvanced`)
@@ -41,8 +46,15 @@ function TeamsAdvScatter({statOne, statTwo}) {
           radius: 5
         }] 
       };
+
+      useEffect(() => {
+        const url = document?.getElementById('graph')?.toDataURL()
+        console.log(url)
+        setCanvas(url)
+      })
     return (
-        <div className="graph-card">
+        <>
+          <div className="graph-card">
             <Bubble className="" data={data} options={{
           plugins: {
             title: {
@@ -64,6 +76,16 @@ function TeamsAdvScatter({statOne, statTwo}) {
           }
         }}  id = "graph" />
         </div>
+        {user ? 
+          <div>
+              <SaveGraph canvas={canvas}/>
+          </div> 
+          
+              :
+              <></>
+              }
+        </>
+        
     )
 }
 
