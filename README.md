@@ -1,2 +1,2 @@
-# MSc-Project
-Basketball Stat App Repo
+# BallerStats
+NBA Statistics App Repo
